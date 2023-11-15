@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "F:\\Shubham Kapoor\\halogig\\morluxury-backend\\src\\logs\\.4f146cf69e514b2f4eef5b0b105d36c20aef4aba-audit.json",
+    "files": [
+        {
+            "date": 1699964298616,
+            "name": "F:\\Shubham Kapoor\\halogig\\morluxury-backend\\src\\logs\\2023-11-14.log",
+            "hash": "764b411401771a89529b49124af7c73a50e5c74febe9992e26944c945b17bf9e"
+        },
+        {
+            "date": 1700001341985,
+            "name": "F:\\Shubham Kapoor\\halogig\\morluxury-backend\\src\\logs\\2023-11-15.log",
+            "hash": "a18e396dd4e649fbf49382c182123f5eab49fc352ef7f84f5924f480f075d39d"
+        }
+    ],
+    "hashType": "sha256"
+}

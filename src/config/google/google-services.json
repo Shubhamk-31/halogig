@@ -1,0 +1,387 @@
+{
+  "project_info": {
+    "project_number": "641414037774",
+    "firebase_url": "https://x-pivot-233712.firebaseio.com",
+    "project_id": "x-pivot-233712",
+    "storage_bucket": "x-pivot-233712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:5a7d260cd5619ff8c4175f",
+        "android_client_info": {
+          "package_name": "com.activeitzone.active_ecommerce_deliveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-v5uufsm64aa43omh64rj5p9t82b2copk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.activeitzone.active_ecommerce_deliveryapp",
+            "certificate_hash": "aab8e4798112422ccc12f88957c61aa6f6f3a0f4"
+          }
+        },
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:a92f2f5b288035dac4175f",
+        "android_client_info": {
+          "package_name": "com.activeitzone.active_ecommerce_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-8j18450mvrc8mroo8oc5nguvqntgajao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.activeitzone.active_ecommerce_flutter_app",
+            "certificate_hash": "aab8e4798112422ccc12f88957c61aa6f6f3a0f4"
+          }
+        },
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:08c99a399cb1e758c4175f",
+        "android_client_info": {
+          "package_name": "com.codiant.halogig"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-2kvqb38c4hrkdrit94faevprm5cdmjn6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codiant.halogig",
+            "certificate_hash": "81b046581f64ede35add51cd512a986601a96189"
+          }
+        },
+        {
+          "client_id": "641414037774-6unka8sgvu2bbarjhjcrgima5s7vksnr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codiant.halogig",
+            "certificate_hash": "3ce0aca03a76c8916f18430c9f8367f39e739d75"
+          }
+        },
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:f7a2a04dfb09e72cc4175f",
+        "android_client_info": {
+          "package_name": "com.codiant.oreofashion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-96roe2g7t96muil5a637v3fr8lbbrucj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codiant.oreofashion",
+            "certificate_hash": "d9bcf4cc8b85925a106a45e0c3bf6e44a8044c0b"
+          }
+        },
+        {
+          "client_id": "641414037774-due3vj279a1ofbads0kmg37r4d117if7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codiant.oreofashion",
+            "certificate_hash": "a7abfc932dc2d3ec914220ae5a7e910001e2a7b7"
+          }
+        },
+        {
+          "client_id": "641414037774-rcs1g0l96ramh65u9dv8ab68ibsijq3l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codiant.oreofashion",
+            "certificate_hash": "fa6533c091705c65da3de4d7b0746d76fe8f06d0"
+          }
+        },
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:5b7dc38fce278ecac4175f",
+        "android_client_info": {
+          "package_name": "com.codiant.oreostoremanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:8d530232f6388c5cc4175f",
+        "android_client_info": {
+          "package_name": "com.eduvacancy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:e77453a1526a40eac4175f",
+        "android_client_info": {
+          "package_name": "com.ncodeslab.quizee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-13n1ps9c6sfh7kdhutq4n3mud9oge16i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ncodeslab.quizee",
+            "certificate_hash": "239ae5103ef2472d2d4e490988594c89a1e54d06"
+          }
+        },
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641414037774:android:82fe4f1dcc14eab9c4175f",
+        "android_client_info": {
+          "package_name": "dev.timistudio.habitrun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641414037774-gkei4rqiems9f7rgkfr0lu29tf5mdvl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.timistudio.habitrun",
+            "certificate_hash": "2c333a2b339452055cefad7713a5dbfd3399b52f"
+          }
+        },
+        {
+          "client_id": "641414037774-jr3sp269par0nmheg0in44qfu6cf9ps6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.timistudio.habitrun",
+            "certificate_hash": "aab8e4798112422ccc12f88957c61aa6f6f3a0f4"
+          }
+        },
+        {
+          "client_id": "641414037774-q78cbg1qk4n07ldlhs6769q8s66nd1i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW9YHHg-oOKUSvNXbXy1hzImqOiYsWj2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641414037774-0ugn2ao50ie8me0oghs51evchv8q5h0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "641414037774-5oh94csce02g9fha4o3h3pd2lkav2bma.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codiant.planit",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
