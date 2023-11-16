@@ -17,7 +17,7 @@ export default {
       if (result) {
         res.status(utility.httpStatus('OK')).json({
           success: true,
-          data: result,
+          result,
           message: utility.getMessage(req, false, ''),
         });
       } else {

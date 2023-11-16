@@ -1250,3 +1250,11 @@
 {"level":"info","message":"Database sync successfully","timestamp":"2023-11-15T15:52:38.688Z"}
 {"level":"info","message":"Database connected successfully","timestamp":"2023-11-15T16:09:28.062Z"}
 {"level":"info","message":"Database sync successfully","timestamp":"2023-11-15T16:09:28.101Z"}
+{"level":"error","message":"internal error Wed Nov 15 2023 21:51:58 GMT+0530 (India Standard Time) SequelizeDatabaseError: Unknown column 'sort_name' in 'field list'","timestamp":"2023-11-15T16:21:58.883Z"}
+{"level":"error","message":"internal error Wed Nov 15 2023 21:51:58 GMT+0530 (India Standard Time) SequelizeDatabaseError: Unknown column 'sort_name' in 'field list'","timestamp":"2023-11-15T16:21:58.900Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-15T16:38:58.303Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-15T16:38:58.350Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-15T16:40:14.900Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-15T16:40:14.940Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-15T16:44:12.202Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-15T16:44:12.233Z"}
