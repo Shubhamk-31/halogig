@@ -6,14 +6,9 @@
     "auditLog": "C:\\Users\\HP\\Desktop\\Halogig-Backend\\src\\logs\\.46e6919224bf437b7c54836829f8ac6d18ea66f4-audit.json",
     "files": [
         {
-            "date": 1700057491331,
-            "name": "C:\\Users\\HP\\Desktop\\Halogig-Backend\\src\\logs\\2023-11-15.log",
-            "hash": "509a448df411d8e40d275e23ef5a598b79f4a4bc4f76eab0a877c7b8400a4da7"
-        },
-        {
-            "date": 1700073204535,
-            "name": "C:\\Users\\HP\\Desktop\\Halogig-Backend\\src\\logs\\2023-11-16.log",
-            "hash": "22c1fbc262d0730ae7a708ded09afff4c35610af701e87c83797194e7122ee0b"
+            "date": 1700402081181,
+            "name": "C:\\Users\\HP\\Desktop\\Halogig-Backend\\src\\logs\\2023-11-19.log",
+            "hash": "7d3603319bf821f217123768593c8e990a9418842afbb2569e816da94dc9a5d8"
         }
     ],
     "hashType": "sha256"
