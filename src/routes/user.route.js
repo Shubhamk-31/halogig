@@ -34,8 +34,6 @@ router.post(
   userController.login,
 );
 
-
-
 router.post(
   '/user/details/thumbnail',
   authMiddleware,
