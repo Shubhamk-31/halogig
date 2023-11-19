@@ -1,0 +1,109 @@
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:03:00.012Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:03:00.017Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:03:00.018Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:03:03.825Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:03:49.919Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:04:00.018Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:04:00.022Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:04:00.027Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:04:38.058Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:05:00.004Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:05:00.010Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:05:00.014Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:05:59.170Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:06:00.021Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:06:00.024Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:06:00.027Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:06:57.429Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:07:22.609Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:09:22.591Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:10:00.013Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:10:00.016Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:10:00.018Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:11:00.018Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:11:00.023Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:11:00.029Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:12:00.005Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:12:00.009Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:12:00.011Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:12:00.871Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:12:56.190Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:13:00.005Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:13:00.011Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:13:00.016Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:13:49.083Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:14:00.017Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:14:00.023Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:14:00.028Z"}
+{"level":"error","message":"Database connection error %s","timestamp":"2023-11-08T19:14:20.551Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-08T19:15:01.178Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-08T19:15:01.247Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:16:00.014Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:16:00.017Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:16:00.020Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:17:00.010Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:17:00.014Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:17:00.017Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:18:00.003Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:18:00.006Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:18:00.008Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:19:00.005Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:19:00.009Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:19:00.013Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:20:00.009Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:20:00.012Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:20:00.014Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:21:00.016Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:21:00.019Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:21:00.020Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:22:00.009Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:22:00.011Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:22:00.015Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:23:00.011Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:23:00.015Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:23:00.016Z"}
+{"level":"error","message":"Order status update: TypeError: Cannot read properties of undefined (reading 'orderPickedUpStatusChange')","timestamp":"2023-11-08T19:24:00.011Z"}
+{"level":"error","message":"Delete media error: TypeError: Cannot read properties of undefined (reading 'findAllAndRemove')","timestamp":"2023-11-08T19:24:00.012Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-08T19:24:00.014Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-09T17:28:12.286Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-09T17:28:12.329Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:29:00.022Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:30:00.018Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:31:00.026Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:32:00.014Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.507Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.511Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.514Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.529Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.535Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.542Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.547Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.551Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.556Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.559Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.563Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.570Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.584Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.588Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.599Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.602Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.615Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.629Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.645Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.646Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:53:38.660Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:54:00.010Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:55:00.004Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:56:00.014Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T17:57:00.010Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-09T17:57:26.798Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-09T17:57:26.820Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-09T18:00:04.062Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-09T18:00:04.115Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T18:01:00.013Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T18:02:00.007Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2023-11-09T18:16:58.596Z"}
+{"level":"info","message":"Database sync successfully","timestamp":"2023-11-09T18:16:58.623Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T18:17:00.014Z"}
+{"level":"error","message":"internal error Thu Nov 09 2023 23:47:23 GMT+0530 (India Standard Time) Error: TypeError: Cannot destructure property 'body' of 'req' as it is undefined.","timestamp":"2023-11-09T18:17:23.857Z"}
+{"level":"error","message":"Product status update error: TypeError: Cannot read properties of undefined (reading 'updateCurrentProductStatus')","timestamp":"2023-11-09T18:18:00.008Z"}
