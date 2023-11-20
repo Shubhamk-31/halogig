@@ -62,7 +62,9 @@ export default {
   async userRegistration(req) {
     try {
       const { body } = req;
-      body.password = await utils.generateHashPassword(body.password);
+      if (body.password) {
+        body.password = await utils.generateHashPassword(body.password);
+      }
       await User.update(body, { where: { id: body.id } });
       const token = await jwt.createToken({ id: body.id });
       return token;
