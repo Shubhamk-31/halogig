@@ -74,24 +74,18 @@ export default {
   async userProjectDetail(req) {
     try {
       const { body, user: { id } } = req;
+      console.log(123);
       body.userId = id;
       return ProjectDetail.create(body);
     } catch (error) {
       throw Error(error);
     }
   },
-
-  async getUserDetail(req) {
-    try {
-      const { user } = req;
-      return ProjectDetail.findOne({ where: { userId: user.id } });
-    } catch (error) {
-      throw Error(error);
-    }
-  },
   async compareUserPassword(password, hashPassword) {
+    console.log(124);
     if (password && hashPassword) {
       const isPasswordMatch = await bcrypt.compare(password, hashPassword);
+      console.log(123, isPasswordMatch);
       return !!isPasswordMatch;
     }
     return false;
@@ -102,6 +96,7 @@ export default {
       const { body } = req;
       const user = await User.findOne({ where: { email: body.email } });
       if (user) {
+        console.log(user);
         const isPasswordMatch = await this.compareUserPassword(
           body?.password,
           user.password,
@@ -110,8 +105,8 @@ export default {
         if (!isPasswordMatch) {
           return false;
         }
-        const token = await jwt.createToken({ id: user.id });
-        return { token, user };
+        const token = await jwt.createToken({ id: body.id });
+        return token;
       }
       return false;
     } catch (error) {
