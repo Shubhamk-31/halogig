@@ -86,7 +86,19 @@ export default {
   async getUserDetail(req) {
     try {
       const { user } = req;
-      return ProjectDetail.findAll({ where: { userId: user.id } });
+      return ProjectDetail.findAll({
+        where: { userId: user.id },
+        include: [
+          {
+            model: User,
+            where: { id: user.id },
+            required: true,
+            attributes: {
+              exclude: ['password'],
+            },
+          },
+        ],
+      });
     } catch (error) {
       throw Error(error);
     }
