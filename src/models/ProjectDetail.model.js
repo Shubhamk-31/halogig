@@ -33,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
   });
-
+  ProjectDetail.associate = (models) => {
+    ProjectDetail.belongsTo(models.User, {
+      foreignKey: 'userId',
+    });
+  };
   return ProjectDetail;
 };
