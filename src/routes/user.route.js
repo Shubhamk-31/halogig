@@ -29,12 +29,16 @@ router.post(
   userController.userDetails,
 );
 
+router.get(
+  '/user/details',
+  authMiddleware,
+  userController.getUserDetail,
+);
+
 router.post(
   '/login',
   userController.login,
 );
-
-
 
 router.post(
   '/user/details/thumbnail',
