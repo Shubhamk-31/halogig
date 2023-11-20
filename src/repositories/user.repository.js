@@ -86,7 +86,7 @@ export default {
   async getUserDetail(req) {
     try {
       const { user } = req;
-      return ProjectDetail.findOne({ where: { userId: user.id } });
+      return ProjectDetail.findAll({ where: { userId: user.id } });
     } catch (error) {
       throw Error(error);
     }
