@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "D:\\Downloads\\morluxury-backend-zip\\morluxury-backend\\src\\logs\\.6296184aa23d0273ec584a447463acf4d873db8e-audit.json",
+    "files": [
+        {
+            "date": 1700053516264,
+            "name": "D:\\Downloads\\morluxury-backend-zip\\morluxury-backend\\src\\logs\\2023-11-15.log",
+            "hash": "9d5e8c80ae5b3ada807ec7ee92826fa882625d1ad1caaa7d941df83f018ff4bd"
+        }
+    ],
+    "hashType": "sha256"
+}

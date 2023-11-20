@@ -142,11 +142,13 @@ export default class Bootstrap {
   start() {
     const { app } = this;
     const port = app.get('port');
-    app.listen(port, () => { });
+    app.listen(port, () => {
+      console.log('server listening at ', port);
+    });
     // delete unused media from media temp
-    // if (config.app.environment === 'production') {
-    this.scheduleJob();
-    // }
+    if (config.app.environment === 'production') {
+      this.scheduleJob();
+    }
   }
 
   /**

@@ -16,7 +16,7 @@ export default {
       if (result) {
         res.status(utility.httpStatus('OK')).json({
           success: true,
-          data: result,
+          result: result[0],
           message: utility.getMessage(req, false, 'SIGNUP'),
         });
       } else {
