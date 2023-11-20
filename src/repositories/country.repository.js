@@ -11,6 +11,7 @@ export default {
   async createCountry(req) {
     try {
       const { body } = req;
+      console.log(body);
       return Country.create(body);
     } catch (err) {
       throw Error(err);
