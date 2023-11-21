@@ -10,6 +10,8 @@ const {
   ProjectDetail,
   Thumbnail,
   InternalData,
+  Certificate,
+  Education,
 } = models;
 // const {
 //   User,
@@ -78,6 +80,26 @@ export default {
       const { body, user: { id } } = req;
       body.userId = id;
       return ProjectDetail.create(body);
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async userCertificate(req) {
+    try {
+      const { body, user: { id } } = req;
+      body.userId = id;
+      return Certificate.create(body);
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async userEducation(req) {
+    try {
+      const { body, user: { id } } = req;
+      body.userId = id;
+      return Education.create(body);
     } catch (error) {
       throw Error(error);
     }

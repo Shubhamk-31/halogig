@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     description: {
       type: DataTypes.TEXT,
     },
+    appId: {
+      type: DataTypes.STRING,
+    },
     images: {
       type: DataTypes.TEXT,
     },
