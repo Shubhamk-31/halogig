@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     institute: {
       type: DataTypes.TEXT,
     },
+    userId: {
+      type: DataTypes.STRING,
+    },
   }, {
     underscored: true,
   });
