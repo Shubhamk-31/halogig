@@ -37,7 +37,7 @@ export default {
       body.otp = 111111;
       body.status = 'incomplete';
       const userData = await User.findOne({
-        where: { email: body.email, mobile: body.mobile, status: { [Op.or]: ['otpVerified', 'completed'] } },
+        where: { email: body.email, status: { [Op.or]: ['otpVerified', 'completed'] } },
       });
       if (userData) {
         return false;
