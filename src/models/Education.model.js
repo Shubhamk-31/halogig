@@ -9,7 +9,6 @@
 //     }, {
 //       underscored: true,
 //     });
-  
+
 //     return Education;
 //   };
-  
