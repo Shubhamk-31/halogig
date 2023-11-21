@@ -52,6 +52,18 @@ router.post(
   userController.userIntenalData,
 );
 
+router.post(
+  '/user/details/education',
+  authMiddleware,
+  userController.userEducation,
+);
+
+router.post(
+  '/user/details/certificate',
+  authMiddleware,
+  userController.userCertificate,
+);
+
 // router.put(
 //   '/user/details',
 //   authMiddleware,
