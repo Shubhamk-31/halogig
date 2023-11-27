@@ -1,18 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
   const Certificate = sequelize.define('Certificate', {
-    registrationNumber: {
+    certificate_no: {
       type: DataTypes.STRING,
     },
-    CertificationName: {
+    name: {
       type: DataTypes.TEXT,
     },
-    fromYear: {
+    from_date: {
       type: DataTypes.TEXT,
     },
-    toYear: {
+    till_date: {
       type: DataTypes.TEXT,
     },
-    institute: {
+    institutename: {
       type: DataTypes.TEXT,
     },
     userId: {
