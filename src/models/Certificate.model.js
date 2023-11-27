@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     certificate_id: {
       type: DataTypes.STRING,
       autoIncrement: true,
+      primaryKey: true,
     },
     name: {
       type: DataTypes.TEXT,
