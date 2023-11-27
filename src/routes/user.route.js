@@ -64,6 +64,42 @@ router.post(
   userController.userCertificate,
 );
 
+router.post(
+  '/user/details/professional-detail',
+  authMiddleware,
+  userController.userProfessionalDetail,
+);
+
+router.post(
+  '/user/details/project',
+  authMiddleware,
+  userController.addUserProject,
+);
+
+router.get(
+  '/user/details/project',
+  authMiddleware,
+  userController.getUserProject,
+);
+
+router.get(
+  '/user/details/education',
+  authMiddleware,
+  userController.getEducation,
+);
+
+router.get(
+  '/user/details/certificate',
+  authMiddleware,
+  userController.getCertificate,
+);
+
+router.get(
+  '/user/details/professional-detail',
+  authMiddleware,
+  userController.getProfessionalDetail,
+);
+
 // router.put(
 //   '/user/details',
 //   authMiddleware,

@@ -1,35 +1,42 @@
 module.exports = (sequelize, DataTypes) => {
-  const Education = sequelize.define('Education', {
-    education_id: {
+  const Project = sequelize.define('Project', {
+    user_id: {
       type: DataTypes.STRING,
     },
-    userId: {
+    user_project_id: {
       type: DataTypes.STRING,
     },
-    delete_id: {
+    project_name: {
       type: DataTypes.STRING,
     },
-    education_type: {
+    project_type: {
       type: DataTypes.STRING,
     },
-    graduation_type: {
+    duration: {
       type: DataTypes.STRING,
     },
-    university_name: {
+    technologty_pre: {
       type: DataTypes.STRING,
     },
-    month: {
+    industry: {
       type: DataTypes.STRING,
     },
-    year: {
+    project_details: {
       type: DataTypes.STRING,
     },
-    degree: {
+    upload_file: {
+      type: DataTypes.STRING,
+    },
+    project_link: {
       type: DataTypes.STRING,
     },
   }, {
     underscored: true,
   });
-
-  return Education;
+  Project.associate = (models) => {
+    Project.belongsTo(models.User, {
+      foreignKey: 'userId',
+    });
+  };
+  return Project;
 };
