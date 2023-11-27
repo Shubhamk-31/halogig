@@ -3,6 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     certificate_no: {
       type: DataTypes.STRING,
     },
+    certificate_id: {
+      type: DataTypes.STRING,
+      autoIncrement: true,
+    },
     name: {
       type: DataTypes.TEXT,
     },
