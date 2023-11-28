@@ -4,41 +4,21 @@ import { Router } from 'express';
 import middlewares from '../middlewares/index';
 import controllers from '../controllers/index';
 
-const { userController } = controllers;
+const { userController, industryController } = controllers;
 const { authMiddleware } = middlewares;
 const router = Router();
 
-router.post(
-  '/user/create-user',
-  userController.createNewUser,
-);
+router.post('/user/create-user', userController.createNewUser);
 
-router.put(
-  '/user/otp-verify',
-  userController.verifyUserOtp,
-);
+router.put('/user/otp-verify', userController.verifyUserOtp);
 
-router.put(
-  '/user/registration',
-  userController.userRegistration,
-);
+router.put('/user/registration', userController.userRegistration);
 
-router.post(
-  '/user/details',
-  authMiddleware,
-  userController.userDetails,
-);
+router.post('/user/details', authMiddleware, userController.userDetails);
 
-router.get(
-  '/user/details',
-  authMiddleware,
-  userController.getUserDetail,
-);
+router.get('/user/details', authMiddleware, userController.getUserDetail);
 
-router.post(
-  '/login',
-  userController.login,
-);
+router.post('/login', userController.login);
 
 router.post(
   '/user/details/thumbnail',
@@ -99,6 +79,8 @@ router.get(
   authMiddleware,
   userController.getProfessionalDetail,
 );
+router.get('/industry', authMiddleware, industryController.getIndustry);
+router.post('/industry', authMiddleware, industryController.createIndustry);
 
 // router.put(
 //   '/user/details',
