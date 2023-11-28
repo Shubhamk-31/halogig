@@ -138,6 +138,11 @@ export default {
     try {
       const { body, user: { id } } = req;
       body.userId = id;
+      const data = await ProfessionalDetail.findOne({ where: { userId: id } });
+      if (data) {
+        await data.update(body);
+        return true;
+      }
       await ProfessionalDetail.create(body);
       return true;
     } catch (error) {
