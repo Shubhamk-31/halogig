@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     professional_experience_id: {
       type: DataTypes.STRING,
+      autoIncrement: true,
+      primaryKey: true,
     },
     profile_headline: {
       type: DataTypes.STRING,
