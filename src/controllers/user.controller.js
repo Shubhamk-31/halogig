@@ -53,6 +53,174 @@ export default {
     }
   },
 
+  async userCertificate(req, res, next) {
+    try {
+      const result = await userRepository.userCertificate(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async addUserProject(req, res, next) {
+    try {
+      const result = await userRepository.addUserProject(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getUserProject(req, res, next) {
+    try {
+      const result = await userRepository.getUserProject(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getProfessionalDetail(req, res, next) {
+    try {
+      const result = await userRepository.getProfessionalDetail(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getEducation(req, res, next) {
+    try {
+      const result = await userRepository.getEducation(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getCertificate(req, res, next) {
+    try {
+      const result = await userRepository.getCertificate(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async userProfessionalDetail(req, res, next) {
+    try {
+      const result = await userRepository.userProfessionalDetail(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async userEducation(req, res, next) {
+    try {
+      const result = await userRepository.userEducation(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'FALSE_RESPONSE'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
   async userDetails(req, res, next) {
     try {
       const result = await userRepository.userProjectDetail(req);

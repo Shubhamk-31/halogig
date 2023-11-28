@@ -1,42 +1,42 @@
 module.exports = (sequelize, DataTypes) => {
-  const ProjectDetail = sequelize.define('ProjectDetail', {
-    userId: {
+  const Project = sequelize.define('Project', {
+    user_id: {
       type: DataTypes.STRING,
     },
-    appName: {
+    user_project_id: {
+      type: DataTypes.STRING,
+    },
+    project_name: {
+      type: DataTypes.STRING,
+    },
+    project_type: {
+      type: DataTypes.STRING,
+    },
+    duration: {
+      type: DataTypes.STRING,
+    },
+    technologty_pre: {
       type: DataTypes.STRING,
     },
     industry: {
       type: DataTypes.STRING,
     },
-    softwareVersion: {
+    project_details: {
       type: DataTypes.STRING,
     },
-    technology: {
+    upload_file: {
       type: DataTypes.STRING,
     },
-    features: {
-      type: DataTypes.STRING,
-    },
-    deliveryTime: {
-      type: DataTypes.STRING,
-    },
-    sourceCode: {
-      type: DataTypes.STRING,
-    },
-    price: {
-      type: DataTypes.STRING,
-    },
-    description: {
+    project_link: {
       type: DataTypes.STRING,
     },
   }, {
     underscored: true,
   });
-  ProjectDetail.associate = (models) => {
-    ProjectDetail.belongsTo(models.User, {
+  Project.associate = (models) => {
+    Project.belongsTo(models.User, {
       foreignKey: 'userId',
     });
   };
-  return ProjectDetail;
+  return Project;
 };

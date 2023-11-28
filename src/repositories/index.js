@@ -1,9 +1,11 @@
 import countryRepository from './country.repository';
 import userRepository from './user.repository';
+import industryRepository from './industry.repository';
 
 export default {
   countryRepository,
   userRepository,
+  industryRepository,
   // accountRepository,
   // addressRepository,
   // mediaRepository,

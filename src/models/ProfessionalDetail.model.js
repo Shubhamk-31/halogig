@@ -1,42 +1,42 @@
 module.exports = (sequelize, DataTypes) => {
-  const ProjectDetail = sequelize.define('ProjectDetail', {
+  const ProfessionalDetail = sequelize.define('ProfessionalDetail', {
     userId: {
       type: DataTypes.STRING,
     },
-    appName: {
+    professional_experience_id: {
+      type: DataTypes.STRING,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    profile_headline: {
       type: DataTypes.STRING,
     },
-    industry: {
+    project_category: {
       type: DataTypes.STRING,
     },
-    softwareVersion: {
+    project_sub_category: {
       type: DataTypes.STRING,
     },
-    technology: {
+    technologty_pre: {
       type: DataTypes.STRING,
     },
-    features: {
+    model_engagement: {
       type: DataTypes.STRING,
     },
-    deliveryTime: {
+    rateperhour: {
       type: DataTypes.STRING,
     },
-    sourceCode: {
+    rateperhour_2: {
       type: DataTypes.STRING,
     },
-    price: {
+    support_project: {
       type: DataTypes.STRING,
     },
-    description: {
+    development_project: {
       type: DataTypes.STRING,
     },
   }, {
     underscored: true,
   });
-  ProjectDetail.associate = (models) => {
-    ProjectDetail.belongsTo(models.User, {
-      foreignKey: 'userId',
-    });
-  };
-  return ProjectDetail;
+  return ProfessionalDetail;
 };
