@@ -6,8 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
       },
       certificate_id: {
-        type: DataTypes.STRING,
-        unsigned:true,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
