@@ -26,4 +26,12 @@ export default {
       throw Error(error);
     }
   },
+
+  async getCustomerIndustries() {
+    try {
+      return Industry.findAll();
+    } catch (error) {
+      throw Error(error);
+    }
+  },
 };

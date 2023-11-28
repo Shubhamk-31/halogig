@@ -4,21 +4,21 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     certificate_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
     name: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
     from_date: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
     till_date: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
     institutename: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
     userId: {
       type: DataTypes.STRING,
