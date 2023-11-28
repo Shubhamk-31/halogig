@@ -110,7 +110,7 @@ export default {
   async getProfessionalDetail(req) {
     try {
       const { user: { id } } = req;
-      return ProfessionalDetail.findAll({ where: { userId: id } });
+      return ProfessionalDetail.findOne({ where: { userId: id } });
     } catch (error) {
       throw Error(error);
     }
