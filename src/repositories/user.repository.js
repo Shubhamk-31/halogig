@@ -1,9 +1,9 @@
-import { Op } from 'sequelize'
-import bcrypt from 'bcryptjs'
-import models from '../models'
-import utils from '../utils/index'
+import { Op } from 'sequelize';
+import bcrypt from 'bcryptjs';
+import models from '../models';
+import utils from '../utils/index';
 
-import jwt from '../services/jwt.service'
+import jwt from '../services/jwt.service';
 
 const {
   User,
@@ -14,25 +14,25 @@ const {
   Education,
   ProfessionalDetail,
   Project,
-} = models
+} = models;
 export default {
   async createNewUser(req) {
     try {
-      const { body } = req
-      body.otp = 111111
-      body.status = 'incomplete'
+      const { body } = req;
+      body.otp = 111111;
+      body.status = 'incomplete';
       const userData = await User.findOne({
         where: {
           email: body.email,
           status: { [Op.or]: ['otpVerified', 'completed'] },
         },
-      })
+      });
       if (userData) {
-        return false
+        return false;
       }
-      return User.create(body)
+      return User.create(body);
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -40,30 +40,52 @@ export default {
     try {
       const {
         body: { otp, email },
-      } = req
+      } = req;
       const userData = await User.findOne({
         where: { otp, email, status: 'incomplete' },
-      })
+      });
       if (userData) {
-        return await userData.update({ status: 'otpVerified' })
+        return await userData.update({ status: 'otpVerified' });
       }
-      return false
+      return false;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
   async userRegistration(req) {
     try {
-      const { body } = req
+      const { body } = req;
       if (body.password) {
-        body.password = await utils.generateHashPassword(body.password)
+        body.password = await utils.generateHashPassword(body.password);
       }
-      await User.update(body, { where: { id: body.id } })
-      const token = await jwt.createToken({ id: body.id })
-      return token
+      console.log(
+        '🚀 ~ file: user.repository.js:59 ~ userRegistration ~ body:',
+        body,
+      );
+      await User.update(body, { where: { id: body.id } });
+      const token = await jwt.createToken({ id: body.id });
+      return token;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
+    }
+  },
+
+  async updateUser(req) {
+    try {
+      const {
+        body,
+        user: { id },
+      } = req;
+      console.log(
+        '🚀 ~ file: user.repository.js:59 ~ userRegistration ~ body:',
+        body,
+      );
+      await User.update(body, { where: { id } });
+      const token = await jwt.createToken({ id });
+      return token;
+    } catch (error) {
+      throw Error(error);
     }
   },
 
@@ -72,12 +94,12 @@ export default {
       const {
         body,
         user: { id },
-      } = req
-      console.log(123)
-      body.userId = id
-      return ProjectDetail.create(body)
+      } = req;
+      console.log(123);
+      body.userId = id;
+      return ProjectDetail.create(body);
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -86,16 +108,16 @@ export default {
       const {
         body,
         user: { id },
-      } = req
+      } = req;
       const data = body.map(async (element) => {
-        const value = { userId: id, ...element }
-        await Certificate.create(value)
-        return true
-      })
-      await Promise.all(data)
-      return true
+        const value = { userId: id, ...element };
+        await Certificate.create(value);
+        return true;
+      });
+      await Promise.all(data);
+      return true;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -104,26 +126,26 @@ export default {
       const {
         body,
         user: { id },
-      } = req
+      } = req;
       const data = body.map(async (element) => {
-        const value = { userId: id, ...element }
-        await Project.create(value)
-        return true
-      })
-      await Promise.all(data)
-      return true
+        const value = { userId: id, ...element };
+        await Project.create(value);
+        return true;
+      });
+      await Promise.all(data);
+      return true;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
   async getUserProject(req) {
     try {
       const {
         user: { id },
-      } = req
-      return Project.findAll({ where: { userId: id } })
+      } = req;
+      return Project.findAll({ where: { userId: id } });
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -131,10 +153,10 @@ export default {
     try {
       const {
         user: { id },
-      } = req
-      return ProfessionalDetail.findOne({ where: { userId: id } })
+      } = req;
+      return ProfessionalDetail.findOne({ where: { userId: id } });
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -142,10 +164,10 @@ export default {
     try {
       const {
         user: { id },
-      } = req
-      return Education.findAll({ where: { userId: id } })
+      } = req;
+      return Education.findAll({ where: { userId: id } });
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -153,10 +175,10 @@ export default {
     try {
       const {
         user: { id },
-      } = req
-      return Certificate.findAll({ where: { userId: id } })
+      } = req;
+      return Certificate.findAll({ where: { userId: id } });
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -165,17 +187,17 @@ export default {
       const {
         body,
         user: { id },
-      } = req
-      body.userId = id
-      const data = await ProfessionalDetail.findOne({ where: { userId: id } })
+      } = req;
+      body.userId = id;
+      const data = await ProfessionalDetail.findOne({ where: { userId: id } });
       if (data) {
-        await data.update(body)
-        return true
+        await data.update(body);
+        return true;
       }
-      await ProfessionalDetail.create(body)
-      return true
+      await ProfessionalDetail.create(body);
+      return true;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -184,73 +206,73 @@ export default {
       const {
         body,
         user: { id },
-      } = req
+      } = req;
       const data = body.map(async (element) => {
-        const value = { userId: id, ...element }
-        await Education.create(value)
-        return true
-      })
-      await Promise.all(data)
-      return true
+        const value = { userId: id, ...element };
+        await Education.create(value);
+        return true;
+      });
+      await Promise.all(data);
+      return true;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
   async getUserDetail(req) {
     try {
-      const { user } = req
-      return User.findAll({
+      const { user } = req;
+      return User.findOne({
         where: { id: user.id },
         attributes: {
           exclude: ['password'],
         },
-      })
+      });
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
   async compareUserPassword(password, hashPassword) {
-    console.log(124)
+    console.log(124);
     if (password && hashPassword) {
-      const isPasswordMatch = await bcrypt.compare(password, hashPassword)
-      console.log(123, isPasswordMatch)
-      return !!isPasswordMatch
+      const isPasswordMatch = await bcrypt.compare(password, hashPassword);
+      console.log(123, isPasswordMatch);
+      return !!isPasswordMatch;
     }
-    return false
+    return false;
   },
 
   async login(req) {
     try {
-      const { body } = req
-      const user = await User.findOne({ where: { email: body.email } })
+      const { body } = req;
+      const user = await User.findOne({ where: { email: body.email } });
       if (user) {
         const isPasswordMatch = await this.compareUserPassword(
           body?.password,
           user.password,
-        )
+        );
         if (!isPasswordMatch) {
-          return false
+          return false;
         }
-        const token = await jwt.createToken({ id: user.id })
-        return token
+        const token = await jwt.createToken({ id: user.id });
+        return token;
       }
-      return false
+      return false;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
   async userDetails(req) {
     try {
-      const { body } = req
-      body.status = 'completed'
-      await User.update(body, { where: { id: body.id } })
+      const { body } = req;
+      body.status = 'completed';
+      await User.update(body, { where: { id: body.id } });
 
-      const token = await jwt.createToken({ id: body.id })
-      return token
+      const token = await jwt.createToken({ id: body.id });
+      return token;
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -259,11 +281,11 @@ export default {
       const {
         body,
         user: { id },
-      } = req
-      body.userId = id
-      return Thumbnail.create(body)
+      } = req;
+      body.userId = id;
+      return Thumbnail.create(body);
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
 
@@ -272,12 +294,12 @@ export default {
       const {
         body,
         user: { id },
-      } = req
+      } = req;
 
-      body.userId = id
-      return InternalData.create(body)
+      body.userId = id;
+      return InternalData.create(body);
     } catch (error) {
-      throw Error(error)
+      throw Error(error);
     }
   },
-}
+};

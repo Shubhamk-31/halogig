@@ -14,6 +14,8 @@ router.put('/user/otp-verify', userController.verifyUserOtp);
 
 router.put('/user/registration', userController.userRegistration);
 
+router.put('/user/update-details', authMiddleware, userController.updateUser);
+
 router.post('/user/details', authMiddleware, userController.userDetails);
 
 router.get('/user/details', authMiddleware, userController.getUserDetail);
@@ -81,7 +83,11 @@ router.get(
 );
 router.get('/industry', authMiddleware, industryController.getIndustry);
 router.post('/industry', authMiddleware, industryController.createIndustry);
-router.get('/customerIndustry', authMiddleware, industryController.getCustomerIndustries);
+router.get(
+  '/customerIndustry',
+  authMiddleware,
+  industryController.getCustomerIndustries,
+);
 // router.put(
 //   '/user/details',
 //   authMiddleware,
