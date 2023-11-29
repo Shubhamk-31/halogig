@@ -47,6 +47,16 @@ router.get(
 );
 
 router.get(
+  '/category',
+  userController.getAllCategory,
+);
+
+router.get(
+  '/sub-category',
+  userController.getAllSubCategory,
+);
+
+router.get(
   '/user/details/application/:id',
   authMiddleware,
   userController.userApplicationDetail,

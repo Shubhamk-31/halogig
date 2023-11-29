@@ -14,6 +14,8 @@ const {
   Education,
   ProfessionalDetail,
   Project,
+  Category,
+  SubCategory,
 } = models;
 export default {
   async createNewUser(req) {
@@ -213,7 +215,6 @@ export default {
       throw Error(error);
     }
   },
-  
 
   async userApplicationDetail(req) {
     try {
@@ -223,6 +224,23 @@ export default {
       return ProjectDetail.findOne({
         where: { id },
       });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getAllCategory() {
+    try {
+      return Category.findAll();
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getAllSubCategory(req) {
+    try {
+      const { params: { id } } = req;
+      return SubCategory.findAll({ where: { categoryId: id } });
     } catch (error) {
       throw Error(error);
     }
