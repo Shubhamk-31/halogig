@@ -52,7 +52,7 @@ router.get(
 );
 
 router.get(
-  '/sub-category',
+  '/sub-category/:id',
   userController.getAllSubCategory,
 );
 
