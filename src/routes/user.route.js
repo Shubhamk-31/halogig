@@ -40,10 +40,16 @@ router.post(
   userController.userEducation,
 );
 
-router.post(
+router.get(
   '/user/details/application',
   authMiddleware,
   userController.userApplication,
+);
+
+router.get(
+  '/user/details/application/:id',
+  authMiddleware,
+  userController.userApplicationDetail,
 );
 
 router.post(
