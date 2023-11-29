@@ -213,7 +213,6 @@ export default {
       throw Error(error);
     }
   },
-  
 
   async userApplicationDetail(req) {
     try {
