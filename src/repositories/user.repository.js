@@ -77,13 +77,8 @@ export default {
         body,
         user: { id },
       } = req;
-      console.log(
-        '🚀 ~ file: user.repository.js:59 ~ userRegistration ~ body:',
-        body,
-      );
       await User.update(body, { where: { id } });
-      const token = await jwt.createToken({ id });
-      return token;
+      return true;
     } catch (error) {
       throw Error(error);
     }
