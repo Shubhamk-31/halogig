@@ -232,7 +232,7 @@ export default {
       const {
         user: { id },
       } = req;
-      return ProjectDetail.findAll({
+      return ProjectDetail.findOne({
         where: { userId: id },
       });
     } catch (error) {

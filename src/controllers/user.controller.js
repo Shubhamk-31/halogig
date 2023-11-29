@@ -223,7 +223,7 @@ export default {
 
   async userApplicationDetail(req, res, next) {
     try {
-      const result = await userRepository.userApplication(req);
+      const result = await userRepository.userApplicationDetail(req);
       if (result) {
         res.status(utility.httpStatus('OK')).json({
           success: true,
