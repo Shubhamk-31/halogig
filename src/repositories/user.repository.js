@@ -1,9 +1,9 @@
-import { Op } from 'sequelize';
-import bcrypt from 'bcryptjs';
-import models from '../models';
-import utils from '../utils/index';
+import { Op } from 'sequelize'
+import bcrypt from 'bcryptjs'
+import models from '../models'
+import utils from '../utils/index'
 
-import jwt from '../services/jwt.service';
+import jwt from '../services/jwt.service'
 
 const {
   User,
@@ -14,245 +14,270 @@ const {
   Education,
   ProfessionalDetail,
   Project,
-} = models;
+} = models
 export default {
-
   async createNewUser(req) {
     try {
-      const { body } = req;
-      body.otp = 111111;
-      body.status = 'incomplete';
+      const { body } = req
+      body.otp = 111111
+      body.status = 'incomplete'
       const userData = await User.findOne({
-        where: { email: body.email, status: { [Op.or]: ['otpVerified', 'completed'] } },
-      });
+        where: {
+          email: body.email,
+          status: { [Op.or]: ['otpVerified', 'completed'] },
+        },
+      })
       if (userData) {
-        return false;
+        return false
       }
-      return User.create(body);
+      return User.create(body)
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async verifyUserOtp(req) {
     try {
-      const { body: { otp, email } } = req;
-      const userData = await User.findOne({ where: { otp, email, status: 'incomplete' } });
+      const {
+        body: { otp, email },
+      } = req
+      const userData = await User.findOne({
+        where: { otp, email, status: 'incomplete' },
+      })
       if (userData) {
-        return await userData.update({ status: 'otpVerified' });
+        return await userData.update({ status: 'otpVerified' })
       }
-      return false;
+      return false
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userRegistration(req) {
     try {
-      const { body } = req;
+      const { body } = req
       if (body.password) {
-        body.password = await utils.generateHashPassword(body.password);
+        body.password = await utils.generateHashPassword(body.password)
       }
-      await User.update(body, { where: { id: body.id } });
-      const token = await jwt.createToken({ id: body.id });
-      return token;
+      await User.update(body, { where: { id: body.id } })
+      const token = await jwt.createToken({ id: body.id })
+      return token
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userProjectDetail(req) {
     try {
-      const { body, user: { id } } = req;
-      console.log(123);
-      body.userId = id;
-      return ProjectDetail.create(body);
+      const {
+        body,
+        user: { id },
+      } = req
+      console.log(123)
+      body.userId = id
+      return ProjectDetail.create(body)
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userCertificate(req) {
     try {
-      const { body, user: { id } } = req;
+      const {
+        body,
+        user: { id },
+      } = req
       const data = body.map(async (element) => {
-        const value = { userId: id, ...element };
-        await Certificate.create(value);
-        return true;
-      });
-      await Promise.all(data);
-      return true;
+        const value = { userId: id, ...element }
+        await Certificate.create(value)
+        return true
+      })
+      await Promise.all(data)
+      return true
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async addUserProject(req) {
     try {
-      const { body, user: { id } } = req;
+      const {
+        body,
+        user: { id },
+      } = req
       const data = body.map(async (element) => {
-        const value = { userId: id, ...element };
-        await Project.create(value);
-        return true;
-      });
-      await Promise.all(data);
-      return true;
+        const value = { userId: id, ...element }
+        await Project.create(value)
+        return true
+      })
+      await Promise.all(data)
+      return true
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
   async getUserProject(req) {
     try {
-      const { user: { id } } = req;
-      return Project.findAll({ where: { userId: id } });
+      const {
+        user: { id },
+      } = req
+      return Project.findAll({ where: { userId: id } })
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async getProfessionalDetail(req) {
     try {
-      const { user: { id } } = req;
-      return ProfessionalDetail.findOne({ where: { userId: id } });
+      const {
+        user: { id },
+      } = req
+      return ProfessionalDetail.findOne({ where: { userId: id } })
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async getEducation(req) {
     try {
-      const { user: { id } } = req;
-      return Education.findAll({ where: { userId: id } });
+      const {
+        user: { id },
+      } = req
+      return Education.findAll({ where: { userId: id } })
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async getCertificate(req) {
     try {
-      const { user: { id } } = req;
-      return Certificate.findAll({ where: { userId: id } });
+      const {
+        user: { id },
+      } = req
+      return Certificate.findAll({ where: { userId: id } })
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userProfessionalDetail(req) {
     try {
-      const { body, user: { id } } = req;
-      body.userId = id;
-      const data = await ProfessionalDetail.findOne({ where: { userId: id } });
+      const {
+        body,
+        user: { id },
+      } = req
+      body.userId = id
+      const data = await ProfessionalDetail.findOne({ where: { userId: id } })
       if (data) {
-        await data.update(body);
-        return true;
+        await data.update(body)
+        return true
       }
-      await ProfessionalDetail.create(body);
-      return true;
+      await ProfessionalDetail.create(body)
+      return true
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userEducation(req) {
     try {
-      const { body, user: { id } } = req;
+      const {
+        body,
+        user: { id },
+      } = req
       const data = body.map(async (element) => {
-        const value = { userId: id, ...element };
-        await Education.create(value);
-        return true;
-      });
-      await Promise.all(data);
-      return true;
+        const value = { userId: id, ...element }
+        await Education.create(value)
+        return true
+      })
+      await Promise.all(data)
+      return true
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async getUserDetail(req) {
     try {
-      const { user } = req;
-      console.log('🚀 ~ file: user.repository.js:174 ~ getUserDetail ~ user:', user);
-      return ProjectDetail.findAll({
-        where: { userId: user.id },
-        include: [
-          {
-            model: User,
-            where: { id: user.id },
-            required: true,
-            attributes: {
-              exclude: ['password'],
-            },
-          },
-        ],
-      });
+      const { user } = req
+      return User.findAll({
+        where: { id: user.id },
+        attributes: {
+          exclude: ['password'],
+        },
+      })
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
   async compareUserPassword(password, hashPassword) {
-    console.log(124);
+    console.log(124)
     if (password && hashPassword) {
-      const isPasswordMatch = await bcrypt.compare(password, hashPassword);
-      console.log(123, isPasswordMatch);
-      return !!isPasswordMatch;
+      const isPasswordMatch = await bcrypt.compare(password, hashPassword)
+      console.log(123, isPasswordMatch)
+      return !!isPasswordMatch
     }
-    return false;
+    return false
   },
 
   async login(req) {
     try {
-      const { body } = req;
-      const user = await User.findOne({ where: { email: body.email } });
+      const { body } = req
+      const user = await User.findOne({ where: { email: body.email } })
       if (user) {
-        console.log(user);
         const isPasswordMatch = await this.compareUserPassword(
           body?.password,
           user.password,
-        );
+        )
         if (!isPasswordMatch) {
-          return false;
+          return false
         }
-        const token = await jwt.createToken({ id: user.id });
-        return token;
+        const token = await jwt.createToken({ id: user.id })
+        return token
       }
-      return false;
+      return false
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userDetails(req) {
     try {
-      const { body } = req;
-      body.status = 'completed';
-      await User.update(body, { where: { id: body.id } });
+      const { body } = req
+      body.status = 'completed'
+      await User.update(body, { where: { id: body.id } })
 
-      const token = await jwt.createToken({ id: body.id });
-      return token;
+      const token = await jwt.createToken({ id: body.id })
+      return token
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userThumbnail(req) {
     try {
-      const { body, user: { id } } = req;
-      body.userId = id;
-      return Thumbnail.create(body);
+      const {
+        body,
+        user: { id },
+      } = req
+      body.userId = id
+      return Thumbnail.create(body)
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
 
   async userIntenalData(req) {
     try {
-      const { body, user: { id } } = req;
+      const {
+        body,
+        user: { id },
+      } = req
 
-      body.userId = id;
-      return InternalData.create(body);
+      body.userId = id
+      return InternalData.create(body)
     } catch (error) {
-      throw Error(error);
+      throw Error(error)
     }
   },
-
-};
+}
