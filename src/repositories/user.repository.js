@@ -222,16 +222,28 @@ export default {
         attributes: {
           exclude: ['password'],
         },
+        include: [{
+          model: ProfessionalDetail,
+          required: false,
+        }, {
+          model: Certificate,
+          required: false,
+        }, {
+          model: Education,
+          required: false,
+        }, {
+          model: Project,
+          required: false,
+        }],
       });
     } catch (error) {
       throw Error(error);
     }
   },
   async compareUserPassword(password, hashPassword) {
-    console.log(124);
     if (password && hashPassword) {
       const isPasswordMatch = await bcrypt.compare(password, hashPassword);
-      console.log(123, isPasswordMatch);
+
       return !!isPasswordMatch;
     }
     return false;

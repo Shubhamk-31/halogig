@@ -38,5 +38,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
   });
+  ProfessionalDetail.associate = (models) => {
+    ProfessionalDetail.belongsTo(models.User, {
+      foreignKey: 'userId', onDelete: 'cascade',
+    });
+  };
   return ProfessionalDetail;
 };

@@ -202,5 +202,20 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+  User.associate = (models) => {
+    User.hasMany(models.ProfessionalDetail, {
+      foreignKey: 'userId', onDelete: 'cascade',
+    });
+    User.hasMany(models.Certificate, {
+      foreignKey: 'userId', onDelete: 'cascade',
+    });
+    User.hasMany(models.Education, {
+      foreignKey: 'userId', onDelete: 'cascade',
+    });
+    User.hasMany(models.Project, {
+      foreignKey: 'userId', onDelete: 'cascade',
+    });
+  };
+
   return User;
 };
