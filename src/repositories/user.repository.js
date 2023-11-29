@@ -213,6 +213,20 @@ export default {
       throw Error(error);
     }
   },
+  
+
+  async userApplicationDetail(req) {
+    try {
+      const {
+        params: { id },
+      } = req;
+      return ProjectDetail.findOne({
+        where: { id },
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
 
   async userApplication(req) {
     try {

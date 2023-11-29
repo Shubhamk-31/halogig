@@ -46,6 +46,12 @@ router.get(
   userController.userApplication,
 );
 
+router.get(
+  '/user/details/application/:id',
+  authMiddleware,
+  userController.userApplicationDetail,
+);
+
 router.post(
   '/user/details/certificate',
   authMiddleware,
