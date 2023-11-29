@@ -214,6 +214,19 @@ export default {
     }
   },
 
+  async userApplication(req) {
+    try {
+      const {
+        user: { id },
+      } = req;
+      return ProjectDetail.findOne({
+        where: { userId: id },
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
   async getUserDetail(req) {
     try {
       const { user } = req;
