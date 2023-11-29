@@ -251,7 +251,7 @@ export default {
       const {
         user: { id },
       } = req;
-      return ProjectDetail.findOne({
+      return ProjectDetail.findAll({
         where: { userId: id },
       });
     } catch (error) {
