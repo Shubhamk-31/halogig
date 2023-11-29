@@ -16,6 +16,7 @@ const authValidateRequest = async (req, res, next) => {
         const token = parts[1];
         if (/^Bearer$/i.test(scheme)) {
           const decodedToken = jwt.verifyToken(token);
+          console.log('🚀 ~ file: auth.middleware.js:19 ~ authValidateRequest ~ decodedToken:', decodedToken);
           if (decodedToken) {
             req.user = decodedToken;
             next();

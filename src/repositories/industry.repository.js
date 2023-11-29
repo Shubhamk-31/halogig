@@ -1,6 +1,6 @@
 import models from '../models';
 
-const { Industry } = models;
+const { Industry, CustomerIndustries } = models;
 export default {
   /**
    * Function to create industry
@@ -22,6 +22,14 @@ export default {
   async getIndustry() {
     try {
       return Industry.findAll();
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getCustomerIndustries() {
+    try {
+      return CustomerIndustries.findAll();
     } catch (error) {
       throw Error(error);
     }

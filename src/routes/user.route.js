@@ -81,7 +81,7 @@ router.get(
 );
 router.get('/industry', authMiddleware, industryController.getIndustry);
 router.post('/industry', authMiddleware, industryController.createIndustry);
-
+router.get('/customerIndustry', authMiddleware, industryController.getCustomerIndustries);
 // router.put(
 //   '/user/details',
 //   authMiddleware,

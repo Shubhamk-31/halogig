@@ -171,6 +171,7 @@ export default {
   async getUserDetail(req) {
     try {
       const { user } = req;
+      console.log('🚀 ~ file: user.repository.js:174 ~ getUserDetail ~ user:', user);
       return ProjectDetail.findAll({
         where: { userId: user.id },
         include: [
@@ -211,7 +212,7 @@ export default {
         if (!isPasswordMatch) {
           return false;
         }
-        const token = await jwt.createToken({ id: body.id });
+        const token = await jwt.createToken({ id: user.id });
         return token;
       }
       return false;

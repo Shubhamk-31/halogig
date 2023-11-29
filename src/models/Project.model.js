@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     user_project_id: {
       type: DataTypes.STRING,
+      autoIncrement: true,
+      primaryKey: true,
     },
     project_name: {
       type: DataTypes.STRING,
