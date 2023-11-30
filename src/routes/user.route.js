@@ -52,7 +52,19 @@ router.get(
 );
 
 router.get(
+  '/user/category',
+  authMiddleware,
+  userController.getAllCategory,
+);
+
+router.get(
   '/sub-category',
+  userController.getAllSubCategory,
+);
+
+router.get(
+  '/user/sub-category',
+  authMiddleware,
   userController.getAllSubCategory,
 );
 
