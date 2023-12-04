@@ -105,15 +105,21 @@ router.get(
 );
 
 router.get(
+  '/user/details/education',
+  authMiddleware,
+  userController.getAllProfessionalDetail,
+);
+
+router.get(
   '/user/details/certificate',
   authMiddleware,
   userController.getCertificate,
 );
 
 router.get(
-  '/user/details/professional-detail',
-  authMiddleware,
-  userController.getProfessionalDetail,
+  '/professional-detail',
+  // authMiddleware,
+  userController.getAllProfessionalDetail,
 );
 router.get('/industry', authMiddleware, industryController.getIndustry);
 router.post('/industry', authMiddleware, industryController.createIndustry);

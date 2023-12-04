@@ -198,6 +198,48 @@ export default {
     }
   },
 
+  async getAllProfessionalDetail(req) {
+    try {
+      const {
+        query: {
+          category, subCategory, min, max, model, technology,
+        },
+      } = req;
+      // console.log(data);
+      const where = {};
+
+      if (category) {
+        where.project_category = category;
+      }
+      if (subCategory) {
+        where.project_sub_category = subCategory;
+      }
+      // rate min
+      if (min) {
+        where.rateperhour = { [Op.gte]: min };
+      }
+      // rate max
+      if (max) {
+        where.rateperhour = { [Op.lte]: max };
+      }
+      // min and max
+      if (min && max) {
+        where.rateperhour = { [Op.between]: [min, max] };
+      }
+      // technology
+      if (model) {
+        where.model_engagement = model;
+      }
+
+      if (technology) {
+        where.technologty_pre = { [Op.substring]: technology };
+      }
+      return ProfessionalDetail.findAll({ where });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
   async userEducation(req) {
     try {
       const {

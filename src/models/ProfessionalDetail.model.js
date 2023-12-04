@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     rateperhour: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     rateperhour_2: {
       type: DataTypes.STRING,
