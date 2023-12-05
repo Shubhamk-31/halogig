@@ -168,6 +168,28 @@ export default {
     }
   },
 
+  async updateProfessionalDetail(req) {
+    try {
+      const {
+        params: { id }, body,
+      } = req;
+      return ProfessionalDetail.update(body, { where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async updateUserProject(req) {
+    try {
+      const {
+        params: { id }, body,
+      } = req;
+      return Project.update(body, { where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
   async getCertificate(req) {
     try {
       const {

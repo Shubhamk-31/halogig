@@ -158,6 +158,51 @@ export default {
     }
   },
 
+  /**
+   * Function to update professional detail
+   */
+  async updateProfessionalDetail(req, res, next) {
+    try {
+      const result = await userRepository.updateProfessionalDetail();
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'Industry Already Exist'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async updateUserProject(req, res, next) {
+    try {
+      const result = await userRepository.updateUserProject();
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'Industry Already Exist'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
   async getAllProfessionalDetail(req, res, next) {
     try {
       const result = await userRepository.getAllProfessionalDetail(req);

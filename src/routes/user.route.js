@@ -117,19 +117,26 @@ router.get(
 
 router.get(
   '/professional-detail',
-  // authMiddleware,
   userController.getAllProfessionalDetail,
 );
 router.get('/industry', industryController.getIndustry);
+
 router.post('/industry', authMiddleware, industryController.createIndustry);
+
 router.get(
   '/customerIndustry',
   authMiddleware,
   industryController.getCustomerIndustries,
 );
-// router.put(
-//   '/user/details',
-//   authMiddleware,
-//   userController.userDetails,
-// );
+router.put(
+  '/user/professional-detail/:id',
+  authMiddleware,
+  userController.updateProfessionalDetail,
+);
+
+router.put(
+  '/user/project/:id',
+  authMiddleware,
+  userController.updateUserProject,
+);
 export default router;
