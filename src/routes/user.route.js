@@ -52,7 +52,18 @@ router.get(
 );
 
 router.get(
-  '/sub-category/:id',
+  '/user/category',
+  authMiddleware,
+  userController.getAllCategory,
+);
+
+router.get(
+  '/sub-category',
+  userController.getAllSubCategory,
+);
+
+router.get(
+  '/user/sub-category/:categoryId',
   userController.getAllSubCategory,
 );
 
@@ -93,15 +104,21 @@ router.get(
 );
 
 router.get(
+  '/user/details/education',
+  authMiddleware,
+  userController.getAllProfessionalDetail,
+);
+
+router.get(
   '/user/details/certificate',
   authMiddleware,
   userController.getCertificate,
 );
 
 router.get(
-  '/user/details/professional-detail',
-  authMiddleware,
-  userController.getProfessionalDetail,
+  '/professional-detail',
+  // authMiddleware,
+  userController.getAllProfessionalDetail,
 );
 router.get('/industry', industryController.getIndustry);
 router.post('/industry', authMiddleware, industryController.createIndustry);
