@@ -63,7 +63,7 @@ router.get(
 );
 
 router.get(
-  '/user/sub-category/:categoryId',
+  '/user/sub-category/:id',
   userController.getAllSubCategory,
 );
 
