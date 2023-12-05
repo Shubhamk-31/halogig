@@ -103,7 +103,7 @@ router.get(
   authMiddleware,
   userController.getProfessionalDetail,
 );
-router.get('/industry', authMiddleware, industryController.getIndustry);
+router.get('/industry', industryController.getIndustry);
 router.post('/industry', authMiddleware, industryController.createIndustry);
 router.get(
   '/customerIndustry',
