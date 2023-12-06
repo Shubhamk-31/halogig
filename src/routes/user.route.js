@@ -29,6 +29,18 @@ router.post(
 );
 
 router.post(
+  '/user/details/thumbnail/:id',
+  authMiddleware,
+  userController.updateThumbnail,
+);
+
+router.post(
+  '/user/details/internal-data/:id',
+  authMiddleware,
+  userController.updateInternalData,
+);
+
+router.post(
   '/user/details/internal-pages',
   authMiddleware,
   userController.userIntenalData,

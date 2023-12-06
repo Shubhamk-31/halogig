@@ -418,4 +418,26 @@ export default {
       throw Error(error);
     }
   },
+
+  async updateInternalData(req) {
+    try {
+      const {
+        parama: { id },
+      } = req;
+      return InternalData.update(body,{where:{id}});
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async updateThumbnail(req) {
+    try {
+      const {
+        parama: { id },
+      } = req;
+      return Thumbnail.update(body,{where:{id}});
+    } catch (error) {
+      throw Error(error);
+    }
+  },
 };
