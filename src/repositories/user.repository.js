@@ -186,8 +186,21 @@ export default {
     try {
       const {
         user: { id },
+        query: {
+          limit,
+          offset,
+        },
       } = req;
-      return ClientProject.findAll({ where: { posted_by_user_id: id } });
+      const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
+      const o = parseInt(offset, 10) || 0; // Default to 0 if not provided
+
+      return ClientProject.findAll(
+        {
+          where: { posted_by_user_id: id },
+          limit: l,
+          offset: o,
+        },
+      );
     } catch (error) {
       throw Error(error);
     }
