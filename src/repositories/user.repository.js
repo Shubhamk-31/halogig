@@ -425,7 +425,7 @@ export default {
         body,
         params: { id },
       } = req;
-      return InternalData.update(body,{where:{id}});
+      return InternalData.update(body, { where: { id } });
     } catch (error) {
       throw Error(error);
     }
@@ -437,7 +437,7 @@ export default {
         params: { id },
         body,
       } = req;
-      return Thumbnail.update(body,{where:{id}});
+      return Thumbnail.update(body, { where: { id } });
     } catch (error) {
       throw Error(error);
     }

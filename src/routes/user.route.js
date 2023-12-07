@@ -28,13 +28,13 @@ router.post(
   userController.userThumbnail,
 );
 
-router.post(
+router.put(
   '/user/details/thumbnail/:id',
   authMiddleware,
   userController.updateThumbnail,
 );
 
-router.post(
+router.put(
   '/user/details/internal-data/:id',
   authMiddleware,
   userController.updateInternalData,
