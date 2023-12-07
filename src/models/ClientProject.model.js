@@ -45,8 +45,7 @@ module.exports = (sequelize, DataTypes) => {
     type_of_project: {
       type: DataTypes.STRING,
     },
-    status: {
-    type: DataTypes.INTEGER,  },
+    status: { type: DataTypes.INTEGER },
   }, {
     underscored: true,
   });
