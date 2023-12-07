@@ -212,7 +212,15 @@ export default {
 
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
       const o = parseInt(offset, 10) || 0; // Default to 0 if not provided
-      return SavedProject.findAll({ where: { userId: id }, limit: l, offset: o });
+      return SavedProject.findAll({
+        where: { userId: id },
+        limit: l,
+        offset: o,
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
     } catch (error) {
       throw Error(error);
     }

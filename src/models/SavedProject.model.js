@@ -14,5 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
 
+  SavedProject.associate = (models) => {
+    SavedProject.belongsTo(models.ClientProject, {
+      foreignKey: 'projectId', onDelete: 'cascade',
+    });
+  };
+
   return SavedProject;
 };
