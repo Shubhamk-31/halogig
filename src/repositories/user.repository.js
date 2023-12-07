@@ -396,7 +396,11 @@ export default {
           return false;
         }
         const token = await jwt.createToken({ id: user.id });
-        return { token, login_as: user.register_as };
+        user.password = '';
+        user.fullName = `${user.first_name}${user.last_name}`;
+        console.log(user.fullName);
+        // const userData = { fullName: '123123' };
+        return { token, login_as: user.register_as, userKey: { fullName: '123123', ...user.dataValues } };
       }
       return false;
     } catch (error) {
