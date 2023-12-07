@@ -163,4 +163,16 @@ router.get(
   authMiddleware,
   userController.getUserClientProject,
 );
+
+router.get(
+  '/saved-project',
+  authMiddleware,
+  userController.getSavedProject,
+);
+
+router.post(
+  '/saved-project',
+  authMiddleware,
+  userController.savedProject,
+);
 export default router;

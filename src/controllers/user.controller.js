@@ -203,6 +203,48 @@ export default {
     }
   },
 
+  async getSavedProject(req, res, next) {
+    try {
+      const result = await userRepository.getSavedProject(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'Industry Already Exist'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async savedProject(req, res, next) {
+    try {
+      const result = await userRepository.savedProject(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'Industry Already Exist'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
   async createClientProject(req, res, next) {
     try {
       const result = await userRepository.createClientProject(req);

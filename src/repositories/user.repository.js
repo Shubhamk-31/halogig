@@ -12,6 +12,7 @@ const {
   InternalData,
   ClientProject,
   Certificate,
+  SavedProject,
   Education,
   ProfessionalDetail,
   Project,
@@ -51,6 +52,25 @@ export default {
         return await userData.update({ status: 'otpVerified' });
       }
       return false;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async savedProject(req) {
+    try {
+      const {
+        body: { projectId },
+        user: { id },
+      } = req;
+      const savedData = await SavedProject.findOne({
+        where: { userId: id, projectId },
+      });
+      if (savedData) {
+        return await savedData.delete();
+      }
+      return SavedProject.create({ userId: id, projectId });
+      // return true;
     } catch (error) {
       throw Error(error);
     }
@@ -178,6 +198,17 @@ export default {
       body.posted_by_user_id = id;
       body.status = 1;
       return ClientProject.create(body);
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getSavedProject(req) {
+    try {
+      const {
+        user: { id },
+      } = req;
+      return SavedProject.findAll({ where: { userId: id } });
     } catch (error) {
       throw Error(error);
     }
