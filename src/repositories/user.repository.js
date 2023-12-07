@@ -434,7 +434,7 @@ export default {
   async updateThumbnail(req) {
     try {
       const {
-        parama: { id },
+        params: { id },
         body,
       } = req;
       return Thumbnail.update(body,{where:{id}});
