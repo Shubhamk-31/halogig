@@ -396,7 +396,7 @@ export default {
           return false;
         }
         const token = await jwt.createToken({ id: user.id });
-        return { token, login_as: body.register_as };
+        return { token, login_as: user.register_as };
       }
       return false;
     } catch (error) {
