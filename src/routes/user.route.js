@@ -151,4 +151,16 @@ router.put(
   authMiddleware,
   userController.updateUserProject,
 );
+
+router.post(
+  '/client-project',
+  authMiddleware,
+  userController.createClientProject,
+);
+
+router.get(
+  '/client-project',
+  authMiddleware,
+  userController.getUserClientProject,
+);
 export default router;

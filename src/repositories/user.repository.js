@@ -10,6 +10,7 @@ const {
   ProjectDetail,
   Thumbnail,
   InternalData,
+  ClientProject,
   Certificate,
   Education,
   ProfessionalDetail,
@@ -163,6 +164,30 @@ export default {
         user: { id },
       } = req;
       return Education.findAll({ where: { userId: id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async createClientProject(req) {
+    try {
+      const {
+        user: { id },
+        body,
+      } = req;
+      body.posted_by_user_id = id;
+      return ClientProject.create(body);
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getUserClientProject(req) {
+    try {
+      const {
+        user: { id },
+      } = req;
+      return ClientProject.findAll({ where: { posted_by_user_id: id } });
     } catch (error) {
       throw Error(error);
     }
