@@ -176,6 +176,7 @@ export default {
         body,
       } = req;
       body.posted_by_user_id = id;
+      body.status = 1;
       return ClientProject.create(body);
     } catch (error) {
       throw Error(error);
