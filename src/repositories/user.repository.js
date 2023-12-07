@@ -277,25 +277,25 @@ export default {
       }
       // rate min
       if (min) {
-        where.rateperhour = { [Op.gte]: min };
+        where.project_amount = { [Op.gte]: min };
       }
       // rate max
       if (max) {
-        where.rateperhour = { [Op.lte]: max };
+        where.project_amount = { [Op.lte]: max };
       }
       // min and max
       if (min && max) {
-        where.rateperhour = { [Op.between]: [min, max] };
+        where.project_amount = { [Op.between]: [min, max] };
       }
       // technology
       if (model) {
-        where.model_engagement = model;
+        where.type_of_project = model;
       }
 
       if (technology) {
         where.technologty_pre = { [Op.substring]: technology };
       }
-      return ProfessionalDetail.findAll({ where });
+      return ClientProject.findAll({ where });
     } catch (error) {
       throw Error(error);
     }
