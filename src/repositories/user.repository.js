@@ -422,7 +422,8 @@ export default {
   async updateInternalData(req) {
     try {
       const {
-        parama: { id },
+        body,
+        params: { id },
       } = req;
       return InternalData.update(body, { where: { id } });
     } catch (error) {
@@ -433,7 +434,8 @@ export default {
   async updateThumbnail(req) {
     try {
       const {
-        parama: { id },
+        params: { id },
+        body,
       } = req;
       return Thumbnail.update(body, { where: { id } });
     } catch (error) {
