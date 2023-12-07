@@ -400,7 +400,7 @@ export default {
         user.fullName = `${user.first_name}${user.last_name}`;
         console.log(user.fullName);
         // const userData = { fullName: '123123' };
-        return { token, login_as: user.register_as, userKey: { fullName: '123123', ...user.dataValues } };
+        return { token, login_as: user.register_as, userKey: { fullName: `${user.first_name}${user.last_name}`, ...user.dataValues } };
       }
       return false;
     } catch (error) {
