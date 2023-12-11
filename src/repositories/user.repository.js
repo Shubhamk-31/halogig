@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Op } from 'sequelize';
 import bcrypt from 'bcryptjs';
 import models from '../models';
@@ -346,12 +347,16 @@ export default {
     try {
       const {
         user: { id },
-        query: { limit, offset },
+        query: { limit, offset, project_id },
       } = req;
+      const where = { client_id: id };
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
       const o = parseInt(offset, 10) || 0;
+      if (project_id) {
+        where.project_id = project_id;
+      }
       return ProjectBid.findAll({
-        where: { client_id: id },
+        where,
         include: [{
           model: ClientProject,
           required: false,
