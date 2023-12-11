@@ -364,6 +364,9 @@ export default {
           model: User,
           as: 'freelancer',
           required: false,
+          attributes: {
+            exclude: ['password'],
+          },
         }],
         attributes: {
           include: helper.bidType(),
