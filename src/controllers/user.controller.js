@@ -203,6 +203,27 @@ export default {
     }
   },
 
+  async getUserClientProjectDetail(req, res, next) {
+    try {
+      const result = await userRepository.getUserClientProjectDetail(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, 'Industry Already Exist'),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
   async getSavedProject(req, res, next) {
     try {
       const result = await userRepository.getSavedProject(req);

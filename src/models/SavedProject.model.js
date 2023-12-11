@@ -3,10 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     'SavedProject',
     {
       userId: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
       },
       projectId: {
-        type: DataTypes.TEXT,
+        type: DataTypes.INTEGER,
       },
     },
     {
