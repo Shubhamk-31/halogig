@@ -183,19 +183,19 @@ router.post(
 );
 
 router.post(
-  '/project-bid',
+  '/freelancer/bids',
   authMiddleware,
   userController.createProjectBid,
 );
 
 router.get(
-  '/project-bid',
+  '/freelancer/bids',
   authMiddleware,
   userController.getUserBid,
 );
 
 router.get(
-  '/project-bid/:id',
+  '/freelancer/bids/:id',
   authMiddleware,
   userController.getUserBidDetail,
 );
