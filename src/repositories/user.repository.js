@@ -294,9 +294,9 @@ export default {
 
   async getUserBid(req) {
     try {
-      const { user: { id },query:{limit,offset} } = req;
+      const { user: { id }, query: { limit, offset } } = req;
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
-      const o = parseInt(offset, 10) || 0; 
+      const o = parseInt(offset, 10) || 0;
       return ProjectBid.findAll({
         where: { from_user_id: id },
         include: [{
@@ -304,7 +304,7 @@ export default {
           required: false,
         }],
         limit: l,
-          offset: o,
+        offset: o,
       });
     } catch (error) {
       throw Error(error);
