@@ -12,6 +12,7 @@ const {
   InternalData,
   ClientProject,
   Certificate,
+  ProjectBid,
   SavedProject,
   Education,
   ProfessionalDetail,
@@ -82,10 +83,6 @@ export default {
       if (body.password) {
         body.password = await utils.generateHashPassword(body.password);
       }
-      console.log(
-        '🚀 ~ file: user.repository.js:59 ~ userRegistration ~ body:',
-        body,
-      );
       await User.update(body, { where: { id: body.id } });
       const token = await jwt.createToken({ id: body.id });
       return token;
@@ -280,6 +277,46 @@ export default {
         params: { id }, body,
       } = req;
       return Project.update(body, { where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async createProjectBid(req) {
+    try {
+      const { body, user } = req;
+      body.from_user_id = user.id;
+      return ProjectBid.create(body);
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getUserBid(req) {
+    try {
+      const { user: { id } } = req;
+      return ProjectBid.findAll({
+        where: { from_user_id: id },
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getUserBidDetail(req) {
+    try {
+      const { params: { id } } = req;
+      return ProjectBid.findAll({
+        where: { id },
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
     } catch (error) {
       throw Error(error);
     }

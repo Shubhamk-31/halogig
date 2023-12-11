@@ -266,6 +266,69 @@ export default {
     }
   },
 
+  async createProjectBid(req, res, next) {
+    try {
+      const result = await userRepository.createProjectBid(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getUserBid(req, res, next) {
+    try {
+      const result = await userRepository.getUserBid(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getUserBidDetail(req, res, next) {
+    try {
+      const result = await userRepository.getUserBidDetail(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
   async createClientProject(req, res, next) {
     try {
       const result = await userRepository.createClientProject(req);
