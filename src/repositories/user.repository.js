@@ -146,7 +146,7 @@ export default {
         user: { id },
       } = req;
       await Project.delete({ where: { userId: id } });
-      
+
       const data = body.map(async (element) => {
         const value = { userId: id, ...element };
         await Project.create(value);
@@ -456,7 +456,7 @@ export default {
         }
         const token = await jwt.createToken({ id: user.id });
         user.password = '';
-        user.fullName = `${user.first_name}${user.last_name}`;
+        user.fullName = `${user.first_name} ${user.last_name}`;
         console.log(user.fullName);
         // const userData = { fullName: '123123' };
         return { token, login_as: user.register_as, userKey: { fullName: `${user.first_name}${user.last_name}`, ...user.dataValues } };
