@@ -356,10 +356,17 @@ export default {
         where.project_id = project_id;
       }
       return ProjectBid.findAll({
-        where,
+        // where,
         include: [{
           model: ClientProject,
           required: false,
+        }, {
+          model: User,
+          as: 'freelancer',
+          required: false,
+          attributes: {
+            exclude: ['password'],
+          },
         }],
         attributes: {
           include: helper.bidType(),
