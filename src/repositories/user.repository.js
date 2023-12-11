@@ -2,6 +2,7 @@ import { Op } from 'sequelize';
 import bcrypt from 'bcryptjs';
 import models from '../models';
 import utils from '../utils/index';
+import helper from '../helper/subQuery';
 
 import jwt from '../services/jwt.service';
 
@@ -343,7 +344,10 @@ export default {
 
   async getClientBid(req) {
     try {
-      const { user: { id }, query: { limit, offset } } = req;
+      const {
+        user: { id },
+        query: { limit, offset },
+      } = req;
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
       const o = parseInt(offset, 10) || 0;
       return ProjectBid.findAll({
@@ -352,8 +356,11 @@ export default {
           model: ClientProject,
           required: false,
         }],
-        limit:l,
-        offset:o
+        attributes: {
+          include: helper.bidType(),
+        },
+        limit: l,
+        offset: o,
       });
     } catch (error) {
       throw Error(error);
