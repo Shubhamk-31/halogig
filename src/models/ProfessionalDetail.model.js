@@ -1,10 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
   const ProfessionalDetail = sequelize.define('ProfessionalDetail', {
     userId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     professional_experience_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },

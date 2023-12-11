@@ -165,6 +165,12 @@ router.get(
 );
 
 router.get(
+  '/client-project/:id',
+  authMiddleware,
+  userController.getUserClientProjectDetail,
+);
+
+router.get(
   '/saved-project',
   authMiddleware,
   userController.getSavedProject,

@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const ProjectDetail = sequelize.define('ProjectDetail', {
     userId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     appName: {
       type: DataTypes.STRING,

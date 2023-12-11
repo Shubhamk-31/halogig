@@ -252,6 +252,17 @@ export default {
     }
   },
 
+  async getUserClientProjectDetail(req) {
+    try {
+      const {
+        params: { id },
+      } = req;
+      return ProfessionalDetail.findOne({ where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
   async updateProfessionalDetail(req) {
     try {
       const {
