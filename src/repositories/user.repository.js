@@ -294,9 +294,9 @@ export default {
 
   async getUserBid(req) {
     try {
-      const { user: { id },query:{limit,offset} } = req;
+      const { user: { id }, query: { limit, offset } } = req;
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
-      const o = parseInt(offset, 10) || 0; 
+      const o = parseInt(offset, 10) || 0;
       return ProjectBid.findAll({
         where: { from_user_id: id },
         include: [{
@@ -304,7 +304,7 @@ export default {
           required: false,
         }],
         limit: l,
-          offset: o,
+        offset: o,
       });
     } catch (error) {
       throw Error(error);
@@ -316,6 +316,36 @@ export default {
       const { params: { id } } = req;
       return ProjectBid.findAll({
         where: { id },
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async updateprojectBid(req) {
+    try {
+      const { params: { id }, body } = req;
+      return ProjectBid.update(body, {
+        where: { id },
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getClientBid(req) {
+    try {
+      const { user: { id } } = req;
+      return ProjectBid.findAll({
+        where: { client_id: id },
         include: [{
           model: ClientProject,
           required: false,

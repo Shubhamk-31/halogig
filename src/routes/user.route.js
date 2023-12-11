@@ -188,10 +188,22 @@ router.post(
   userController.createProjectBid,
 );
 
+router.put(
+  '/freelancer/bids/:id',
+  authMiddleware,
+  userController.updateProjectBid,
+);
+
 router.get(
   '/freelancer/bids',
   authMiddleware,
   userController.getUserBid,
+);
+
+router.get(
+  '/client/my-project',
+  authMiddleware,
+  userController.getClientBid,
 );
 
 router.get(
