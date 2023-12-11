@@ -145,6 +145,8 @@ export default {
         body,
         user: { id },
       } = req;
+      await Project.delete({ where: { userId: id } });
+      
       const data = body.map(async (element) => {
         const value = { userId: id, ...element };
         await Project.create(value);
