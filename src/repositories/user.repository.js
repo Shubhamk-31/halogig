@@ -343,13 +343,17 @@ export default {
 
   async getClientBid(req) {
     try {
-      const { user: { id } } = req;
+      const { user: { id }, query: { limit, offset } } = req;
+      const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
+      const o = parseInt(offset, 10) || 0;
       return ProjectBid.findAll({
         where: { client_id: id },
         include: [{
           model: ClientProject,
           required: false,
         }],
+        limit:l,
+        offset:o
       });
     } catch (error) {
       throw Error(error);
