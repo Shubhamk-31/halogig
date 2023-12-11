@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
   ProjectBid.associate = (models) => {
     ProjectBid.belongsTo(models.User, {
       foreignKey: 'from_user_id',
+      as: 'freelancer',
     });
     ProjectBid.belongsTo(models.ClientProject, {
       foreignKey: 'project_id',
