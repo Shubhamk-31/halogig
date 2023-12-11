@@ -326,6 +326,36 @@ export default {
     }
   },
 
+  async updateprojectBid(req) {
+    try {
+      const { params: { id }, body } = req;
+      return ProjectBid.update(body, {
+        where: { id },
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getClientBid(req) {
+    try {
+      const { user: { id } } = req;
+      return ProjectBid.findAll({
+        where: { client_id: id },
+        include: [{
+          model: ClientProject,
+          required: false,
+        }],
+      });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
   async getCertificate(req) {
     try {
       const {
