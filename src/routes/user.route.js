@@ -181,4 +181,22 @@ router.post(
   authMiddleware,
   userController.savedProject,
 );
+
+router.post(
+  '/project-bid',
+  authMiddleware,
+  userController.createProjectBid,
+);
+
+router.get(
+  '/project-bid',
+  authMiddleware,
+  userController.getUserBid,
+);
+
+router.get(
+  '/project-bid/:id',
+  authMiddleware,
+  userController.getUserBidDetail,
+);
 export default router;
