@@ -257,7 +257,7 @@ export default {
       const {
         params: { id },
       } = req;
-      return ProfessionalDetail.findOne({ where: { id } });
+      return ClientProject.findOne({ where: { id } });
     } catch (error) {
       throw Error(error);
     }
