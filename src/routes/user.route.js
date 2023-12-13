@@ -97,8 +97,7 @@ router.post(
   userController.userProfessionalDetail,
 );
 
-
-router.post(
+router.get(
   '/user/details/professional-detail',
   authMiddleware,
   userController.getProfessionalDetail,
