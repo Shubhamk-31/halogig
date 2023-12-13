@@ -97,6 +97,13 @@ router.post(
   userController.userProfessionalDetail,
 );
 
+
+router.post(
+  '/user/details/professional-detail',
+  authMiddleware,
+  userController.getProfessionalDetail,
+);
+
 router.post(
   '/user/details/project',
   authMiddleware,
