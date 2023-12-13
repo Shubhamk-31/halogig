@@ -213,7 +213,7 @@ router.get(
 );
 
 router.get(
-  '/user-detail/:id',
+  '/client-project-detail/:id',
   authMiddleware,
   userController.getUserDetailData,
 );
