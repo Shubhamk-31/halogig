@@ -49,6 +49,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
   });
+  ClientProject.associate = (models) => {
+    ClientProject.belongsTo(models.User, {
+      foreignKey: 'posted_by_user_id',
+    });
+  };
 
   return ClientProject;
 };

@@ -215,6 +215,9 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Project, {
       foreignKey: 'userId', onDelete: 'cascade',
     });
+    User.hasMany(models.ClientProject, {
+      foreignKey: 'posted_by_user_id',
+    });
   };
 
   return User;

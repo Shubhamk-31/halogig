@@ -211,4 +211,10 @@ router.get(
   authMiddleware,
   userController.getUserBidDetail,
 );
+
+router.get(
+  '/user-detail/:id',
+  authMiddleware,
+  userController.getUserDetailData,
+);
 export default router;

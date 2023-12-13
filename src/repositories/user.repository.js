@@ -355,8 +355,8 @@ export default {
       if (project_id) {
         where.project_id = project_id;
       }
-      return ProjectBid.findAll({
-        // where,
+      return ProjectBid.findAllAndCount({
+        where,
         include: [{
           model: ClientProject,
           required: false,
@@ -374,6 +374,41 @@ export default {
         limit: l,
         offset: o,
       });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async getUserDetailData(req) {
+    try {
+      const { params: { id } } = req;
+      return ProjectBid.findOne({
+        where: { id },
+        include: [{
+          model: User,
+          as: 'freelancer',
+          required: false,
+          include: [
+            {
+              model: ProfessionalDetail,
+              required: false,
+            },
+            {
+              model: Project,
+              required: false,
+            },
+            {
+              model: ClientProject,
+              required: false,
+            },
+          ],
+        }],
+
+      });
+      // return User.findOne({
+      //   where: { id: 1 },
+
+      // });
     } catch (error) {
       throw Error(error);
     }
