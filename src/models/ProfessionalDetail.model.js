@@ -42,6 +42,14 @@ module.exports = (sequelize, DataTypes) => {
     ProfessionalDetail.belongsTo(models.User, {
       foreignKey: 'userId', onDelete: 'cascade',
     });
+
+    ProfessionalDetail.belongsTo(models.Category, {
+      foreignKey: 'project_category', onDelete: 'cascade',
+    });
+
+    ProfessionalDetail.belongsTo(models.SubCategory, {
+      foreignKey: 'project_sub_category', onDelete: 'cascade',
+    });
   };
   return ProfessionalDetail;
 };
