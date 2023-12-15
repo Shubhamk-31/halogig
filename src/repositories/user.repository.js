@@ -392,6 +392,16 @@ export default {
             {
               model: ProfessionalDetail,
               required: false,
+              include: [
+                {
+                  model: Category,
+                  required: false,
+                },
+                {
+                  model: SubCategory,
+                  required: false,
+                },
+              ],
             },
             {
               model: Project,
@@ -400,6 +410,16 @@ export default {
             {
               model: ClientProject,
               required: false,
+              include: [
+                {
+                  model: Category,
+                  required: false,
+                },
+                {
+                  model: SubCategory,
+                  required: false,
+                },
+              ],
             },
           ],
         }],

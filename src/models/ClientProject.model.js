@@ -53,6 +53,12 @@ module.exports = (sequelize, DataTypes) => {
     ClientProject.belongsTo(models.User, {
       foreignKey: 'posted_by_user_id',
     });
+    ClientProject.belongsTo(models.Category, {
+      foreignKey: 'project_category',
+    });
+    ClientProject.belongsTo(models.SubCategory, {
+      foreignKey: 'project_sub_category',
+    });
   };
 
   return ClientProject;

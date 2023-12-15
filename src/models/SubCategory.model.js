@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       underscored: true,
     },
   );
-
+  SubCategory.associate = (models) => {
+    SubCategory.belongsTo(models.Category, {
+      foreignKey: 'categoryId', onDelete: 'cascade',
+    });
+  };
   return SubCategory;
 };
