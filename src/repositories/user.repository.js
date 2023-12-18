@@ -426,6 +426,9 @@ export default {
               ],
             },
           ],
+        }, {
+          model: ClientProject,
+          required: false,
         }],
 
       });
