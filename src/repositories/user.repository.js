@@ -355,7 +355,7 @@ export default {
       if (project_id) {
         where.project_id = project_id;
       }
-      return ProjectBid.findAndCountAll({
+      return ProjectBid.findAll({
         where,
         include: [{
           model: ClientProject,
