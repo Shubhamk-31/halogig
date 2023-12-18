@@ -404,6 +404,10 @@ export default {
               ],
             },
             {
+              model: ProjectDetail,
+              required: false,
+            },
+            {
               model: Project,
               required: false,
             },
