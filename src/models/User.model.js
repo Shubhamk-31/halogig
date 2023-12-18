@@ -218,6 +218,9 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.ClientProject, {
       foreignKey: 'posted_by_user_id',
     });
+    User.hasMany(models.ProjectDetail, {
+      foreignKey: 'userId',
+    });
   };
 
   return User;
