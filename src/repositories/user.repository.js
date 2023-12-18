@@ -328,15 +328,11 @@ export default {
     }
   },
 
-  async updateprojectBid(req) {
+  async updateProjectBid(req) {
     try {
       const { params: { id }, body } = req;
       return ProjectBid.update(body, {
         where: { id },
-        include: [{
-          model: ClientProject,
-          required: false,
-        }],
       });
     } catch (error) {
       throw Error(error);
