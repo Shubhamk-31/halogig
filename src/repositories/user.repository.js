@@ -331,9 +331,10 @@ export default {
   async updateProjectBid(req) {
     try {
       const { params: { id }, body } = req;
-      return ProjectBid.update(body, {
+      const data = await ProjectBid.update({ status: body.status }, {
         where: { id },
       });
+      return data;
     } catch (error) {
       throw Error(error);
     }

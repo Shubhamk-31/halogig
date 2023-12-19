@@ -195,7 +195,7 @@ router.post(
 );
 
 router.put(
-  '/freelancer/bids/:id',
+  '/bids/:id',
   authMiddleware,
   userController.updateProjectBid,
 );
