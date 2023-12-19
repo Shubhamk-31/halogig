@@ -4,7 +4,6 @@ import utility from '../utils';
 const { userRepository } = repositories;
 
 export default {
-
   /**
    * Create staff
    * @param {object} req
@@ -657,7 +656,11 @@ export default {
         res.status(utility.httpStatus('BAD_REQUEST')).json({
           success: false,
           data: null,
-          message: utility.getMessage(req, false, 'Email or Password is incorrect'),
+          message: utility.getMessage(
+            req,
+            false,
+            'Email or Password is incorrect',
+          ),
         });
       }
     } catch (error) {

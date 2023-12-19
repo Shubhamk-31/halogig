@@ -217,10 +217,12 @@ export default {
         where: { userId: id },
         limit: l,
         offset: o,
-        include: [{
-          model: ClientProject,
-          required: false,
-        }],
+        include: [
+          {
+            model: ClientProject,
+            required: false,
+          },
+        ],
       });
     } catch (error) {
       throw Error(error);
@@ -231,21 +233,16 @@ export default {
     try {
       const {
         user: { id },
-        query: {
-          limit,
-          offset,
-        },
+        query: { limit, offset },
       } = req;
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
       const o = parseInt(offset, 10) || 0; // Default to 0 if not provided
 
-      return ClientProject.findAll(
-        {
-          where: { posted_by_user_id: id },
-          limit: l,
-          offset: o,
-        },
-      );
+      return ClientProject.findAll({
+        where: { posted_by_user_id: id },
+        limit: l,
+        offset: o,
+      });
     } catch (error) {
       throw Error(error);
     }
@@ -265,7 +262,8 @@ export default {
   async updateProfessionalDetail(req) {
     try {
       const {
-        params: { id }, body,
+        params: { id },
+        body,
       } = req;
       return ProfessionalDetail.update(body, { where: { id } });
     } catch (error) {
@@ -276,7 +274,8 @@ export default {
   async updateUserProject(req) {
     try {
       const {
-        params: { id }, body,
+        params: { id },
+        body,
       } = req;
       return Project.update(body, { where: { id } });
     } catch (error) {
@@ -296,15 +295,20 @@ export default {
 
   async getUserBid(req) {
     try {
-      const { user: { id }, query: { limit, offset } } = req;
+      const {
+        user: { id },
+        query: { limit, offset },
+      } = req;
       const l = parseInt(limit, 10) || 10; // Default to 10 if not provided
       const o = parseInt(offset, 10) || 0;
       return ProjectBid.findAll({
         where: { from_user_id: id },
-        include: [{
-          model: ClientProject,
-          required: false,
-        }],
+        include: [
+          {
+            model: ClientProject,
+            required: false,
+          },
+        ],
         limit: l,
         offset: o,
       });
@@ -315,13 +319,17 @@ export default {
 
   async getUserBidDetail(req) {
     try {
-      const { params: { id } } = req;
+      const {
+        params: { id },
+      } = req;
       return ProjectBid.findAll({
         where: { id },
-        include: [{
-          model: ClientProject,
-          required: false,
-        }],
+        include: [
+          {
+            model: ClientProject,
+            required: false,
+          },
+        ],
       });
     } catch (error) {
       throw Error(error);
@@ -330,10 +338,19 @@ export default {
 
   async updateProjectBid(req) {
     try {
-      const { params: { id }, body } = req;
-      const data = await ProjectBid.update({ status: body.status }, {
-        where: { id },
+      const { params: id, body } = req;
+      console.log(
+        '🚀 ~ file: user.repository.js:343 ~ updateProjectBid ~ id, body:',
+        id,
+        body,
+      );
+      const data = await ProjectBid.update(body, {
+        where: id,
       });
+      console.log(
+        '🚀 ~ file: user.repository.js:337 ~ updateProjectBid ~ data:',
+        data,
+      );
       return data;
     } catch (error) {
       throw Error(error);
@@ -354,17 +371,20 @@ export default {
       }
       return ProjectBid.findAll({
         where,
-        include: [{
-          model: ClientProject,
-          required: false,
-        }, {
-          model: User,
-          as: 'freelancer',
-          required: false,
-          attributes: {
-            exclude: ['password'],
+        include: [
+          {
+            model: ClientProject,
+            required: false,
           },
-        }],
+          {
+            model: User,
+            as: 'freelancer',
+            required: false,
+            attributes: {
+              exclude: ['password'],
+            },
+          },
+        ],
         attributes: {
           include: helper.bidType(),
         },
@@ -378,56 +398,60 @@ export default {
 
   async getUserDetailData(req) {
     try {
-      const { params: { id } } = req;
+      const {
+        params: { id },
+      } = req;
       return ProjectBid.findOne({
         where: { id },
-        include: [{
-          model: User,
-          as: 'freelancer',
-          required: false,
-          include: [
-            {
-              model: ProfessionalDetail,
-              required: false,
-              include: [
-                {
-                  model: Category,
-                  required: false,
-                },
-                {
-                  model: SubCategory,
-                  required: false,
-                },
-              ],
-            },
-            {
-              model: ProjectDetail,
-              required: false,
-            },
-            {
-              model: Project,
-              required: false,
-            },
-            {
-              model: ClientProject,
-              required: false,
-              include: [
-                {
-                  model: Category,
-                  required: false,
-                },
-                {
-                  model: SubCategory,
-                  required: false,
-                },
-              ],
-            },
-          ],
-        }, {
-          model: ClientProject,
-          required: false,
-        }],
-
+        include: [
+          {
+            model: User,
+            as: 'freelancer',
+            required: false,
+            include: [
+              {
+                model: ProfessionalDetail,
+                required: false,
+                include: [
+                  {
+                    model: Category,
+                    required: false,
+                  },
+                  {
+                    model: SubCategory,
+                    required: false,
+                  },
+                ],
+              },
+              {
+                model: ProjectDetail,
+                required: false,
+              },
+              {
+                model: Project,
+                required: false,
+              },
+              {
+                model: ClientProject,
+                required: false,
+                include: [
+                  {
+                    model: Category,
+                    required: false,
+                  },
+                  {
+                    model: SubCategory,
+                    required: false,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            model: ClientProject,
+            required: false,
+          },
+        ],
       });
       // return User.findOne({
       //   where: { id: 1 },
@@ -551,7 +575,9 @@ export default {
 
   async getAllSubCategory(req) {
     try {
-      const { params: { id } } = req;
+      const {
+        params: { id },
+      } = req;
       return SubCategory.findAll({ where: { categoryId: id } });
     } catch (error) {
       throw Error(error);
@@ -579,19 +605,24 @@ export default {
         attributes: {
           exclude: ['password'],
         },
-        include: [{
-          model: ProfessionalDetail,
-          required: false,
-        }, {
-          model: Certificate,
-          required: false,
-        }, {
-          model: Education,
-          required: false,
-        }, {
-          model: Project,
-          required: false,
-        }],
+        include: [
+          {
+            model: ProfessionalDetail,
+            required: false,
+          },
+          {
+            model: Certificate,
+            required: false,
+          },
+          {
+            model: Education,
+            required: false,
+          },
+          {
+            model: Project,
+            required: false,
+          },
+        ],
       });
     } catch (error) {
       throw Error(error);
@@ -623,7 +654,14 @@ export default {
         user.fullName = `${user.first_name} ${user.last_name}`;
         console.log(user.fullName);
         // const userData = { fullName: '123123' };
-        return { token, login_as: user.register_as, userKey: { fullName: `${user.first_name}${user.last_name}`, ...user.dataValues } };
+        return {
+          token,
+          login_as: user.register_as,
+          userKey: {
+            fullName: `${user.first_name}${user.last_name}`,
+            ...user.dataValues,
+          },
+        };
       }
       return false;
     } catch (error) {
