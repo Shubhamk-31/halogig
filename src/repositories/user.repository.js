@@ -9,6 +9,7 @@ import jwt from '../services/jwt.service';
 
 const {
   User,
+  Sow,
   ProjectDetail,
   Thumbnail,
   InternalData,
@@ -112,7 +113,6 @@ export default {
         body,
         user: { id },
       } = req;
-      console.log(123);
       body.userId = id;
       return ProjectDetail.create(body);
     } catch (error) {
@@ -339,18 +339,9 @@ export default {
   async updateProjectBid(req) {
     try {
       const { params: id, body } = req;
-      console.log(
-        '🚀 ~ file: user.repository.js:343 ~ updateProjectBid ~ id, body:',
-        id,
-        body,
-      );
       const data = await ProjectBid.update(body, {
         where: id,
       });
-      console.log(
-        '🚀 ~ file: user.repository.js:337 ~ updateProjectBid ~ data:',
-        data,
-      );
       return data;
     } catch (error) {
       throw Error(error);
@@ -728,6 +719,71 @@ export default {
         body,
       } = req;
       return Thumbnail.update(body, { where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async createSow(req) {
+    try {
+      const {
+        body,
+        user: { id },
+      } = req;
+      body.user_id = id;
+      return Sow.create(body);
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async UpdateSow(req) {
+    try {
+      const {
+        body,
+        params: { id },
+      } = req;
+      return Sow.update(body, { where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+  async getSowDetail(req) {
+    try {
+      const {
+        params: { id },
+      } = req;
+      return Sow.findOne({ where: { id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+  async getAllSow() {
+    try {
+      return Sow.findAll();
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+  async getAllUserSow(req) {
+    try {
+      const {
+        user: { id },
+      } = req;
+      return Sow.findAll({ where: { user_id: id } });
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
+  async deleteSow(req) {
+    try {
+      const {
+        body,
+        params: { id },
+      } = req;
+      body.userId = id;
+      return Sow.destroy({ where: { id } });
     } catch (error) {
       throw Error(error);
     }

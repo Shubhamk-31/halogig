@@ -814,9 +814,135 @@ export default {
       next(error);
     }
   },
-};
 
-// export default {
+  // SOW
+
+  async createSow(req, res, next) {
+    try {
+      const result = await userRepository.createSow(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async UpdateSow(req, res, next) {
+    try {
+      const result = await userRepository.UpdateSow(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getSowDetail(req, res, next) {
+    try {
+      const result = await userRepository.getSowDetail(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getAllSow(req, res, next) {
+    try {
+      const result = await userRepository.getAllSow(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getAllUserSow(req, res, next) {
+    try {
+      const result = await userRepository.getAllUserSow(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async deleteSow(req, res, next) {
+    try {
+      const result = await userRepository.deleteSow(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, ''),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+          message: utility.getMessage(req, false, ''),
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+};
 //   /**
 //    * Otp verify
 //    * @param {object} req

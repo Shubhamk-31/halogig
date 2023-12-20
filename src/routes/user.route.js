@@ -223,4 +223,40 @@ router.get(
   authMiddleware,
   userController.getUserDetailData,
 );
+
+// sow
+
+router.post(
+  '/sow',
+  authMiddleware,
+  userController.createSow,
+);
+router.put(
+  '/sow/:id',
+  authMiddleware,
+  userController.UpdateSow,
+);
+router.get(
+  '/sow/:id',
+  authMiddleware,
+  userController.getSowDetail,
+);
+router.get(
+  '/sow',
+  authMiddleware,
+  userController.getAllSow,
+);
+
+router.get(
+  '/user/sow',
+  authMiddleware,
+  userController.getAllUserSow,
+);
+
+router.delete(
+  '/sow/:id',
+  authMiddleware,
+  userController.deleteSow,
+);
+
 export default router;
