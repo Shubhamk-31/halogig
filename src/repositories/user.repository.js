@@ -17,6 +17,7 @@ const {
   Certificate,
   ProjectBid,
   SavedProject,
+  SowInput,
   Education,
   ProfessionalDetail,
   Project,
@@ -646,8 +647,6 @@ export default {
         const token = await jwt.createToken({ id: user.id });
         user.password = '';
         user.fullName = `${user.first_name} ${user.last_name}`;
-        console.log(user.fullName);
-        // const userData = { fullName: '123123' };
         return {
           token,
           login_as: user.register_as,
@@ -734,8 +733,14 @@ export default {
         user: { id },
       } = req;
       body.user_id = id;
-      return Sow.create(body);
+      const data = await Sow.create(body);
+      body.inputList.inputList.map(async (element) => {
+        const inputData = { ...element, sowId: data.id };
+        await SowInput.create(inputData);
+      });
+      return data;
     } catch (error) {
+      console.log(error);
       throw Error(error);
     }
   },
