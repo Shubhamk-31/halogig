@@ -71,7 +71,7 @@ export default {
         where: { userId: id, projectId },
       });
       if (savedData) {
-        return await savedData.delete();
+        return await savedData.destroy();
       }
       return SavedProject.create({ userId: id, projectId });
       // return true;
