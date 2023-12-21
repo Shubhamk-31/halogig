@@ -399,43 +399,46 @@ export default {
             model: User,
             as: 'freelancer',
             required: false,
-            include: [
-              {
-                model: ProfessionalDetail,
-                required: false,
-                include: [
-                  {
-                    model: Category,
-                    required: false,
-                  },
-                  {
-                    model: SubCategory,
-                    required: false,
-                  },
-                ],
-              },
-              {
-                model: ProjectDetail,
-                required: false,
-              },
-              {
-                model: Project,
-                required: false,
-              },
-              {
-                model: ClientProject,
-                required: false,
-                include: [
-                  {
-                    model: Category,
-                    required: false,
-                  },
-                  {
-                    model: SubCategory,
-                    required: false,
-                  },
-                ],
-              },
+            include: [{
+              model: Education,
+              required: false,
+            },
+            {
+              model: ProfessionalDetail,
+              required: false,
+              include: [
+                {
+                  model: Category,
+                  required: false,
+                },
+                {
+                  model: SubCategory,
+                  required: false,
+                },
+              ],
+            },
+            {
+              model: ProjectDetail,
+              required: false,
+            },
+            {
+              model: Project,
+              required: false,
+            },
+            {
+              model: ClientProject,
+              required: false,
+              include: [
+                {
+                  model: Category,
+                  required: false,
+                },
+                {
+                  model: SubCategory,
+                  required: false,
+                },
+              ],
+            },
             ],
           },
           {

@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     status: {
       type: DataTypes.STRING,
-      defaultValue: 'hold',
+      defaultValue: 'pending',
     },
   }, {
     underscored: true,
