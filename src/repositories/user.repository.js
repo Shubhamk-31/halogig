@@ -761,7 +761,13 @@ export default {
       const {
         params: { id },
       } = req;
-      return Sow.findOne({ where: { id } });
+      return Sow.findOne({
+        where: { id },
+        include: [{
+          model: SowInput,
+          required: false,
+        }],
+      });
     } catch (error) {
       throw Error(error);
     }
