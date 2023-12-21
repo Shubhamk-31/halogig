@@ -768,7 +768,12 @@ export default {
   },
   async getAllSow() {
     try {
-      return Sow.findAll();
+      return Sow.findAll({
+        include: [{
+          model: SowInput,
+          required: false,
+        }],
+      });
     } catch (error) {
       throw Error(error);
     }

@@ -37,6 +37,10 @@ module.exports = (sequelize, DataTypes) => {
       underscored: true,
     },
   );
-
+  Sow.associate = (models) => {
+    Sow.hasMany(models.SowInput, {
+      foreignKey: 'sowId',
+    });
+  };
   return Sow;
 };
