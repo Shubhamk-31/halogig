@@ -766,6 +766,11 @@ export default {
         include: [{
           model: SowInput,
           required: false,
+        },
+        {
+          model: ProjectBid,
+          required: false,
+          as: 'bidder',
         }],
       });
     } catch (error) {
@@ -776,6 +781,13 @@ export default {
     try {
       return Sow.findAll({
         include: [{
+          model: ProjectBid,
+          required: false,
+        },
+        {
+          model: ClientProject,
+          required: false,
+        }, {
           model: SowInput,
           required: false,
         }],

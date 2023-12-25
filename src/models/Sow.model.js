@@ -41,6 +41,11 @@ module.exports = (sequelize, DataTypes) => {
     Sow.hasMany(models.SowInput, {
       foreignKey: 'sowId',
     });
+    Sow.belongsTo(models.ProjectBid, {
+      foreignKey: 'project_leads_id',
+      targetKey: 'id',
+      as: 'bidder',
+    });
   };
   return Sow;
 };
