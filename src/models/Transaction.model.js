@@ -1,9 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
   const Transaction = sequelize.define('Transaction', {
-    clientId:{
+    clientId: {
       type: DataTypes.STRING,
     },
-    freelancerId:{
+    freelancerId: {
       type: DataTypes.STRING,
     },
     projectId: {

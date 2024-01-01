@@ -4,7 +4,7 @@ import path from 'path';
 import loggers from '../services/logger.service';
 import countryRoute from './country.route';
 import userRoute from './user.route';
-import paymentRoute from './payment.route'
+import paymentRoute from './payment.route';
 
 import utility from '../utils';
 
