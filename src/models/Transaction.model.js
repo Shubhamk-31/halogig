@@ -3,11 +3,17 @@ module.exports = (sequelize, DataTypes) => {
     clientId: {
       type: DataTypes.STRING,
     },
-    freelancerId: {
+    orderId: {
       type: DataTypes.STRING,
     },
+    amount: {
+      type: DataTypes.INTEGER,
+    },
+    freelancerId: {
+      type: DataTypes.INTEGER,
+    },
     projectId: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     status: {
       type: DataTypes.STRING,

@@ -1,4 +1,5 @@
 import models from '../models';
+import paymentService from '../services/payment.service';
 
 const axios = require('axios');
 
@@ -11,35 +12,20 @@ export default {
   async createRazorpayOrder(req) {
     try {
       const { body: { amount } } = req;
-      const apiUrl = 'https://api.razorpay.com/v1/orders';
-
-      // Set up basic authentication
-      const authHeader = {
-        Authorization: `Basic ${Buffer.from(`${process.env.razorpayApiKey}:${process.env.razorpayApiSecret}`).toString('base64')}`,
-      };
-      const data = {
-        amount,
-        currency: 'INR',
-        receipt: 'receipt#1',
-        notes: {
-          key1: 'value3',
-          key2: 'value2',
-        },
-      };
-
-      // Make the API request and return a promise
-      return new Promise((resolve, reject) => {
-        axios.post(apiUrl, data, { headers: authHeader })
-          .then((response) => {
-            if (response.data) {
-              // save data into transaction
-            }
-            resolve(true);
-          })
-          .catch((error) => {
-            reject(error.response.data);
-          });
-      });
+      const data = await paymentService.createRazorpayOrder(amount);
+      console.log(data);
+      if (data.id) {
+        const transactionData = {
+          orderId: data.id,
+          clientId: 1,
+          amount,
+          freelancerId: 1,
+          status: 'pending',
+          projectId: 1,
+        };
+        await Transaction.create(transactionData);
+      }
+      return data;
     } catch (err) {
       throw Error(err);
     }

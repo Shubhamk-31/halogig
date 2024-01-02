@@ -13,6 +13,7 @@ export default {
   async createRazorpayOrder(req, res, next) {
     try {
       const result = await paymentRepository.createRazorpayOrder(req);
+      console.log(result, 99999);
       if (result) {
         res.status(utility.httpStatus('OK')).json({
           success: true,
