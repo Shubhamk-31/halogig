@@ -42,7 +42,7 @@ export default {
           { where: { orderId: body.razorpay_order_id } },
         );
         console.log(transactionData);
-        await ProjectBid.update({ status: 'accepted' }, { where: { id: transactionData.bidId } });
+        await ProjectBid.update({ status: 'accepted' }, { where: { id: transactionData.dataValues.bidId } });
       } else {
         data = { status: 'failed' };
       }
