@@ -22,6 +22,7 @@ export default {
           freelancerId: bidData.dataValues.from_user_id,
           status: 'pending',
           projectId: bidData.dataValues.project_id,
+          bidId,
         };
         await Transaction.create(transactionData);
       }
@@ -36,7 +37,12 @@ export default {
       const { body } = req;
       let data = {};
       if (body.razorpay_signature && body.razorpay_payment_id) {
-        data = { status: 'success', payment_id: body.razorpay_payment_id };
+        data = { status: 'success', paymentId: body.razorpay_payment_id, signature: body.razorpay_signature };
+        const transactionData = await Transaction.findOne(
+          { where: { orderId: body.razorpay_order_id } },
+        );
+        console.log(transactionData);
+        await ProjectBid.update({ status: 'accepted' }, { where: { id: transactionData.bidId } });
       } else {
         data = { status: 'failed' };
       }

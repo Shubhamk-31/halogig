@@ -15,6 +15,15 @@ module.exports = (sequelize, DataTypes) => {
     projectId: {
       type: DataTypes.INTEGER,
     },
+    bidId: {
+      type: DataTypes.INTEGER,
+    },
+    paymentId: {
+      type: DataTypes.STRING,
+    },
+    signature: {
+      type: DataTypes.STRING,
+    },
     status: {
       type: DataTypes.STRING,
     },
