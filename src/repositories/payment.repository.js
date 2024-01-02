@@ -33,8 +33,14 @@ export default {
 
   async updatePaymentStatus(req) {
     try {
-      const { body: { status, orderId } } = req;
-      return Transaction.update({ status }, { where: { orderId } });
+      const { body } = req;
+      let data = {};
+      if (body.razorpay_signature && body.razorpay_payment_id) {
+        data = { status: 'success', payment_id: body.razorpay_payment_id };
+      } else {
+        data = { status: 'failed' };
+      }
+      return Transaction.update(data, { where: { orderId: body.razorpay_order_id } });
     } catch (err) {
       throw Error(err);
     }
