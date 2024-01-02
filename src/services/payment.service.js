@@ -23,7 +23,6 @@ export default {
         // Make the API request
         axios.post(apiUrl, data, { headers: authHeader })
           .then((response) => {
-            console.log(response);
             resolve(response.data);
           })
           .catch((error) => {

@@ -3,7 +3,7 @@ import paymentService from '../services/payment.service';
 
 const axios = require('axios');
 
-const { Transaction } = models;
+const { Transaction, ProjectBid } = models;
 
 // Replace 'YOUR_API_KEY' and 'YOUR_API_SECRET' with your actual Razorpay API Key and Secret
 
@@ -11,9 +11,9 @@ export default {
   // Function to create a Razorpay order
   async createRazorpayOrder(req) {
     try {
-      const { body: { amount } } = req;
-      const data = await paymentService.createRazorpayOrder(amount);
-      console.log(data);
+      const { body: { amount, bidId } } = req;
+      const bidData = await ProjectBid.findOne({ where: { id: bidId } });
+      const data = await paymentService.createRazorpayOrder(bidData.bid_amount);
       if (data.id) {
         const transactionData = {
           orderId: data.id,
