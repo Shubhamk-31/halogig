@@ -15,7 +15,7 @@ router.get(
   paymentController.getRazorpayOrderDetails,
 );
 
-router.get(
+router.post(
   '/order-status',
   paymentController.updatePaymentStatus,
 );

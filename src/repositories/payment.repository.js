@@ -33,7 +33,7 @@ export default {
 
   async updatePaymentStatus(req) {
     try {
-      const { query: { status, orderId } } = req;
+      const { body: { status, orderId } } = req;
       return Transaction.update({ status }, { where: { orderId } });
     } catch (err) {
       throw Error(err);
