@@ -14,6 +14,11 @@ router.get(
 );
 
 router.get(
+  '/order-status',
+  paymentController.updatePaymentStatus,
+);
+
+router.get(
   '/user-order',
   paymentController.getAllTransaction,
 );

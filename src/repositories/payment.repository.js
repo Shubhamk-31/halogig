@@ -11,21 +11,30 @@ export default {
   // Function to create a Razorpay order
   async createRazorpayOrder(req) {
     try {
-      const { body: { amount, bidId } } = req;
+      const { body: { amount, bidId }, user: { id } } = req;
       const bidData = await ProjectBid.findOne({ where: { id: bidId } });
       const data = await paymentService.createRazorpayOrder(bidData.bid_amount);
       if (data.id) {
         const transactionData = {
           orderId: data.id,
-          clientId: 1,
+          clientId: id,
           amount,
-          freelancerId: 1,
+          freelancerId: bidData.from_user_id,
           status: 'pending',
           projectId: 1,
         };
         await Transaction.create(transactionData);
       }
       return data;
+    } catch (err) {
+      throw Error(err);
+    }
+  },
+
+  async updatePaymentStatus(req) {
+    try {
+      const { query: { status, orderId } } = req;
+      return Transaction.update({ status }, { where: { orderId } });
     } catch (err) {
       throw Error(err);
     }
