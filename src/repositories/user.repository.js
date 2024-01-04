@@ -30,6 +30,7 @@ export default {
       const { body } = req;
       body.otp = 111111;
       body.status = 'incomplete';
+      body.role = 'user';
       const userData = await User.findOne({
         where: {
           email: body.email,
@@ -635,7 +636,7 @@ export default {
   async login(req) {
     try {
       const { body } = req;
-      const user = await User.findOne({ where: { email: body.email } });
+      const user = await User.findOne({ where: { email: body.email, role: 'user' } });
       if (user) {
         const isPasswordMatch = await this.compareUserPassword(
           body?.password,

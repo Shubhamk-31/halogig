@@ -192,6 +192,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: true,
     },
+    role: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+    },
     reminder: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
