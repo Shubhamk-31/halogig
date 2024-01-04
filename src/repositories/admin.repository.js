@@ -22,16 +22,12 @@ export default {
 
   async compareUserPassword(password, hashPassword) {
     try {
-      console.log(3333333);
       if (password && hashPassword) {
-        console.log(3332222, password, hashPassword);
         const isPasswordMatch = await bcrypt.compare(password, hashPassword);
-        console.log(isPasswordMatch);
         return !!isPasswordMatch;
       }
       return false;
     } catch (err) {
-      console.log(err);
       throw Error(err);
     }
   },
