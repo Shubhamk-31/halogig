@@ -45,4 +45,24 @@ export default {
     }
   },
 
+  async getClientProject(req, res, next) {
+    try {
+      const result = await adminRepository.getClientProject(req);
+      if (result) {
+        res.status(utility.httpStatus('OK')).json({
+          success: true,
+          data: result,
+          message: utility.getMessage(req, false, 'SIGNUP'),
+        });
+      } else {
+        res.status(utility.httpStatus('BAD_REQUEST')).json({
+          success: false,
+          data: null,
+        });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
 };

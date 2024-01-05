@@ -13,4 +13,9 @@ router.post(
   adminController.adminLogin,
 );
 
+router.get(
+  '/admin/client-project',
+  adminController.getClientProject,
+);
+
 export default router;

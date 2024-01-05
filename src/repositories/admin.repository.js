@@ -4,6 +4,7 @@ import jwt from '../services/jwt.service';
 
 const {
   User,
+  ClientProject,
 } = models;
 
 export default {
@@ -37,17 +38,14 @@ export default {
       const { body } = req;
       const user = await User.findOne({ where: { email: body.email, role: 'admin' } });
       if (user) {
-        console.log(1222);
         const isPasswordMatch = await this.compareUserPassword(
           body?.password,
           user.password,
         );
-        console.log(44444);
         if (!isPasswordMatch) {
           return false;
         }
         const token = await jwt.createToken({ id: user.id });
-        console.log(343434);
         user.password = '';
         user.fullName = `${user.first_name} ${user.last_name}`;
         return {
@@ -60,6 +58,24 @@ export default {
         };
       }
       return false;
+    } catch (err) {
+      throw Error(err);
+    }
+  },
+
+  async getClientProject() {
+    try {
+      return ClientProject.findAll({
+        include: [
+          {
+            model: User,
+            required: false,
+            attributes: {
+              exclude: ['password'],
+            },
+          },
+        ],
+      });
     } catch (err) {
       throw Error(err);
     }
