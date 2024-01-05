@@ -88,6 +88,7 @@ export default {
       if (body.password) {
         body.password = await utils.generateHashPassword(body.password);
       }
+      body.status = 'unverified';
       await User.update(body, { where: { id: body.id } });
       const token = await jwt.createToken({ id: body.id });
       return token;
