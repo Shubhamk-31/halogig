@@ -110,6 +110,18 @@ export default {
     }
   },
 
+  async adminUpdateUser(req) {
+    try {
+      const {
+        body,
+      } = req;
+      await User.update(body, { where: { id: body.id } });
+      return true;
+    } catch (error) {
+      throw Error(error);
+    }
+  },
+
   async userProjectDetail(req) {
     try {
       const {
@@ -637,7 +649,7 @@ export default {
   async login(req) {
     try {
       const { body } = req;
-      const user = await User.findOne({ where: { email: body.email, role: 'user' } });
+      const user = await User.findOne({ where: { email: body.email, role: 'user', status: 'complete' } });
       if (user) {
         if (user.status === 'approval') {
           return { message: 'approval' };

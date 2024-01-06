@@ -15,7 +15,7 @@ router.put('/user/otp-verify', userController.verifyUserOtp);
 router.put('/user/registration', userController.userRegistration);
 
 router.put('/user/update-details', authMiddleware, userController.updateUser);
-
+router.put('/admin/update-details', userController.adminUpdateUser);
 router.post('/user/details', authMiddleware, userController.userDetails);
 
 router.get('/user/details', authMiddleware, userController.getUserDetail);
