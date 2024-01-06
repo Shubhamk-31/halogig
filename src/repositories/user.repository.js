@@ -88,7 +88,7 @@ export default {
       if (body.password) {
         body.password = await utils.generateHashPassword(body.password);
       }
-      body.status = 'unverified';
+      body.status = 'approval';
       await User.update(body, { where: { id: body.id } });
       const token = await jwt.createToken({ id: body.id });
       return token;
@@ -639,6 +639,9 @@ export default {
       const { body } = req;
       const user = await User.findOne({ where: { email: body.email, role: 'user' } });
       if (user) {
+        if (user.status === 'approval') {
+          return { message: 'approval' };
+        }
         const isPasswordMatch = await this.compareUserPassword(
           body?.password,
           user.password,
