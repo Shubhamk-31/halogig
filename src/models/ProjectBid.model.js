@@ -51,6 +51,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'from_user_id',
       as: 'freelancer',
     });
+    ProjectBid.belongsTo(models.User, {
+      foreignKey: 'client_id',
+      as: 'client',
+    });
     ProjectBid.belongsTo(models.ClientProject, {
       foreignKey: 'project_id',
     });

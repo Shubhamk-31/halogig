@@ -18,4 +18,13 @@ router.get(
   adminController.getClientProject,
 );
 
+router.get(
+  '/admin/application',
+  adminController.getUserApplication,
+);
+
+router.get(
+  '/admin/proposal',
+  adminController.getProjectProposal,
+);
 export default router;

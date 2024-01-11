@@ -5,6 +5,10 @@ import jwt from '../services/jwt.service';
 const {
   User,
   ClientProject,
+  Category,
+  SubCategory,
+  ProjectBid,
+  ProjectDetail,
 } = models;
 
 export default {
@@ -66,6 +70,63 @@ export default {
   async getClientProject() {
     try {
       return ClientProject.findAll({
+        include: [
+          {
+            model: User,
+            required: false,
+            attributes: {
+              exclude: ['password'],
+            },
+          },
+          {
+            model: Category,
+            required: false,
+          },
+          {
+            model: SubCategory,
+            required: false,
+          },
+        ],
+      });
+    } catch (err) {
+      throw Error(err);
+    }
+  },
+
+  async getProjectProposal() {
+    try {
+      return ProjectBid.findAll({
+        include: [
+          {
+            model: User,
+            required: false,
+            as: 'freelancer',
+            attributes: {
+              exclude: ['password'],
+            },
+          },
+          {
+            model: User,
+            required: false,
+            as: 'client',
+            attributes: {
+              exclude: ['password'],
+            },
+          },
+          {
+            model: ClientProject,
+            required: false,
+          },
+        ],
+      });
+    } catch (err) {
+      throw Error(err);
+    }
+  },
+
+  async getUserApplication() {
+    try {
+      return ProjectDetail.findAll({
         include: [
           {
             model: User,
