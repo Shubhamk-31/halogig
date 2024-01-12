@@ -651,6 +651,7 @@ export default {
       const { body } = req;
       const user = await User.findOne({ where: { email: body.email, role: 'user', status: 'complete' } });
       if (user) {
+        console.log(user);
         if (user.status === 'approval') {
           return { message: 'approval' };
         }

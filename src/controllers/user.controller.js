@@ -647,6 +647,7 @@ export default {
     try {
       const result = await userRepository.login(req);
       if (result) {
+        console.log(result);
         if (result.message === 'approval') {
           res.status(utility.httpStatus('BAD_REQUEST')).json({
             success: false,
@@ -657,12 +658,13 @@ export default {
               'Admin Verification required',
             ),
           });
+        } else {
+          res.status(utility.httpStatus('OK')).json({
+            success: true,
+            data: result,
+            message: utility.getMessage(req, false, ''),
+          });
         }
-        res.status(utility.httpStatus('OK')).json({
-          success: true,
-          data: result,
-          message: utility.getMessage(req, false, ''),
-        });
       } else {
         res.status(utility.httpStatus('BAD_REQUEST')).json({
           success: false,
